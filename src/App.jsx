@@ -15,15 +15,19 @@ import Arrival from './components/Arrival'
 import Flashsale from './components/Flashsale'
 import Product from './components/Product'
 import Feature from './components/Feature'
-import Test from "./assets/feature.png"
+import Test from "./assets/choosing1.png"
+import Choosing from './components/Choosing'
 function App() {
   return (
-    <div className='m-10'>
+    <div className=''>
       <Container>
       
 
-          <Flex className="gap-x-5 flex-wrap">
-           <Feature src={Test} name="This is One" badge="NEw" price={250} percent={20} subdiscount={33}/>
+          <Flex className="flex-wrap gap-x-2">
+           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
+           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
+           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
+           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
         
        
           </Flex>

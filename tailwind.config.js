@@ -24,13 +24,14 @@ export default {
         'text56': '56px',
        
       },
-      fontSize: {
+      spacing: {
         'w154': '154px',
         'w512': '512px',
-        'w376': '376px',
-  
-       
-      }
+        "w376": '376px',
+        'w100': '100px',
+
+      },
+     
     },
 
   },
