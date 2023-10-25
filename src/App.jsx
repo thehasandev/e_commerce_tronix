@@ -18,20 +18,12 @@ import Feature from './components/Feature'
 import Test from "./assets/team1.png"
 import Choosing from './components/Choosing'
 import Team from './components/Team'
+import Navbar from './components/Navbar'
 function App() {
   return (
     <div className=''>
       <Container>
-      
-
-          <Flex className="flex-wrap gap-x-2">
-             <Team src={Test} name="Mohammed Hasan" title="Front End"/>
-             <Team/>
-             <Team/>
-          </Flex>
-
-
-     
+        <Navbar/>
       </Container>
     </div>
   )
