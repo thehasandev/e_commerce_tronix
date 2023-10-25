@@ -11,8 +11,9 @@ import SubHeading from './components/SubHeading'
 import One from "./assets/cetagori1.png"
 import Categori from './components/Categori'
 import Arrival from './components/Arrival'
-import Test from "./assets/flash.png"
+import Test from "./assets/product.png"
 import Flashsale from './components/Flashsale'
+import Product from './components/Product'
 
 function App() {
   return (
@@ -21,9 +22,8 @@ function App() {
       
 
           <Flex className="gap-x-5 flex-wrap">
-            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={50}/>
-            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={30}/>
-            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={0}/>
+            <Product src={Test} name="Smart Mop Robot" price={5000} sold={55}/>
+       
           </Flex>
 
 

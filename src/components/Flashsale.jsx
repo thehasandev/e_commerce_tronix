@@ -2,7 +2,7 @@ import React from 'react'
 import Image from './Image'
 import Flex from './Flex'
 
-function Flashsale({src,alt,name,price,avilabelVale,soldValue,badge}) {
+function Flashsale({src,alt,name,price,avilabelVale,soldValue,badge,discount}) {
   return (
     <div className='w-w512 rounded-xl border border-gray relative'>
         <Image src={src} alt={alt} className="rounded-t-xl"/>
@@ -11,7 +11,7 @@ function Flashsale({src,alt,name,price,avilabelVale,soldValue,badge}) {
         </div>
         <div className='px-24 mt-8 mb-10'>
           <h3 className='font-pop font-normal text-2xl text-secondary text-center'>{name}</h3>
-          <p className='font-pop font-normal text-2xl text-secondary text-center mt-2 mb-8'>{price} <span className='text-primary'>- $19.99</span></p>
+          <p className='font-pop font-normal text-2xl text-primary text-center mt-2 mb-8 '> <span className='text-secondary line-through'>${discount}</span> - ${price}</p>
           <Flex className="justify-between items-center ">
             <p className='font-pop font-normal text-small text-secondary '>Available: {avilabelVale} </p>
             <p className='font-pop font-normal text-small text-secondary '>Sold: {soldValue} </p>

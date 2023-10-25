@@ -27,6 +27,7 @@ export default {
       fontSize: {
         'w154': '154px',
         'w512': '512px',
+        'w376': '376px',
        
       }
     },
