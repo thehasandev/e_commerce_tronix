@@ -3,8 +3,11 @@ import Section from "./Section"
 import Container from './Container'
 import Flex from './Flex'
 import Image from './Image'
-import FooterTop from "../assets/FooterTop.png"
+import FooterTop from "../assets/footerTop.png"
 import Logo from "../assets/logo.png"
+import Contact from './Contact'
+import {BsFillTelephoneFill} from "react-icons/bs"
+import {MdEmail} from "react-icons/md"
 
 function Footer() {
   return (
@@ -30,18 +33,28 @@ function Footer() {
            </Container>
        </Section>
 
-       <footer className='flex'>
+       <footer>
         <Container>
-          <div className='w-1/2'>
-            <div className='w-1/2'>
-               <Image src={Logo}/> 
-               
-            </div>
-          </div>
+            <Flex>
 
-          <div className='w-1/2'>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sunt a, corrupti incidunt veritatis autem ab vel ratione officia facere dolorum impedit mollitia illum optio perspiciatis velit minima aliquid rerum maxime eum quo laboriosam sapiente cumque. Ex voluptatem consequatur inventore fugit fugiat pariatur omnis dicta impedit id a reiciendis distinctio veritatis repellendus assumenda molestiae quae ab dolorem cum dolorum modi alias, sunt adipisci veniam. Nostrum, cum corrupti atque doloremque tenetur optio tempore eum adipisci similique culpa fuga amet voluptas maiores porro, incidunt voluptatem, recusandae odit fugit? Odit necessitatibus voluptatum assumenda iure voluptatem. Exercitationem optio repudiandae tenetur vitae ipsam sequi ratione.
-          </div>
+                <div className='w-1/2'>
+                    <div className='w-1/2'>
+                    <Image src={Logo}/> 
+                    <p className='font-pop font-normal text-small text-secondary mt-4 mb-8'>Lorem ipsum dolositamet, consectetur adipiscing elit, sed do eiusmod tempor. </p>
+                        <Contact icon={<BsFillTelephoneFill size={20} className='mb-4'/>} text="+1234567890"/>
+                        <Contact icon={<MdEmail size={25}/>} text="lovia@support.com"/>
+
+                    </div>
+                </div>
+
+                <div className='w-1/2'>
+                    <div className='w-4/12'>
+                        
+                    </div>
+                    <div className='w-4/12'></div>
+                    <div></div>
+                 </div>
+            </Flex>
 
         </Container>
        </footer>
