@@ -1,11 +1,14 @@
 import React from 'react'
+import Container from './components/Container'
 
 function App() {
   return (
     <div>
-      <h1 className='font-pop'>This is My Tailwind Setup</h1>
-      <h1 className='font-mon'>This is My Tailwind Setup</h1>
-      <h1 className='font-nunito'>This is My Tailwind Setup</h1>
+      <Container>
+        <h1 className='font-pop text-primary '>This is My Tailwind Setup</h1>
+        <h1 className='font-mon text-secondary '>This is My Tailwind Setup</h1>
+        <h1 className='font-nunito text-primary '>This is My Tailwind Setup</h1>
+      </Container>
     </div>
   )
 }

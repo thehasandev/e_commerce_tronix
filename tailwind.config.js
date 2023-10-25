@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        'container': '1597px',
+      },
       fontFamily: {
         'pop': ['Poppins'],
         'mon': ['Montserrat'],
