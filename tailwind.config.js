@@ -17,6 +17,7 @@ export default {
       colors: {
         'primary': '#F46B5B',
         'secondary': '#383838',
+        'gray': '#A7A7A7',
       },
       fontSize: {
         'small': '18px',
@@ -25,6 +26,7 @@ export default {
       },
       fontSize: {
         'w154': '154px',
+        'w512': '512px',
        
       }
     },

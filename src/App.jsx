@@ -10,20 +10,18 @@ import {AiFillPhone} from "react-icons/ai"
 import SubHeading from './components/SubHeading'
 import One from "./assets/cetagori1.png"
 import Categori from './components/Categori'
+import Arrival from './components/Arrival'
+import Test from "./assets/arrival.png"
 
 function App() {
   return (
-    <div>
+    <div className='m-10'>
       <Container>
-        <Flex className="gap-x-10">
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-          <Categori src={One} alt="One" text="Computer & Laptop"/>
-
-        </Flex>
+       
+          <Flex className="gap-x-10 flex-wrap">
+            <Arrival src={Test} alt="Test" badge="New" name="Smartphone 5G" price="$299.00"/>
+          </Flex>
+     
       </Container>
     </div>
   )
