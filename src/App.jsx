@@ -15,8 +15,9 @@ import Arrival from './components/Arrival'
 import Flashsale from './components/Flashsale'
 import Product from './components/Product'
 import Feature from './components/Feature'
-import Test from "./assets/choosing1.png"
+import Test from "./assets/team1.png"
 import Choosing from './components/Choosing'
+import Team from './components/Team'
 function App() {
   return (
     <div className=''>
@@ -24,12 +25,9 @@ function App() {
       
 
           <Flex className="flex-wrap gap-x-2">
-           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
-           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
-           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
-           <Choosing src={Test} name="This is One" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
-        
-       
+             <Team src={Test} name="Mohammed Hasan" title="Front End"/>
+             <Team/>
+             <Team/>
           </Flex>
 
 
