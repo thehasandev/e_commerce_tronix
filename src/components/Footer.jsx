@@ -4,6 +4,7 @@ import Container from './Container'
 import Flex from './Flex'
 import Image from './Image'
 import FooterTop from "../assets/FooterTop.png"
+import Logo from "../assets/logo.png"
 
 function Footer() {
   return (
@@ -28,6 +29,22 @@ function Footer() {
               </Flex>
            </Container>
        </Section>
+
+       <footer className='flex'>
+        <Container>
+          <div className='w-1/2'>
+            <div className='w-1/2'>
+               <Image src={Logo}/> 
+               
+            </div>
+          </div>
+
+          <div className='w-1/2'>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sunt a, corrupti incidunt veritatis autem ab vel ratione officia facere dolorum impedit mollitia illum optio perspiciatis velit minima aliquid rerum maxime eum quo laboriosam sapiente cumque. Ex voluptatem consequatur inventore fugit fugiat pariatur omnis dicta impedit id a reiciendis distinctio veritatis repellendus assumenda molestiae quae ab dolorem cum dolorum modi alias, sunt adipisci veniam. Nostrum, cum corrupti atque doloremque tenetur optio tempore eum adipisci similique culpa fuga amet voluptas maiores porro, incidunt voluptatem, recusandae odit fugit? Odit necessitatibus voluptatum assumenda iure voluptatem. Exercitationem optio repudiandae tenetur vitae ipsam sequi ratione.
+          </div>
+
+        </Container>
+       </footer>
     </>
   )
 }
