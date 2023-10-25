@@ -10,8 +10,13 @@ export default {
         'pop': ['Poppins'],
         'mon': ['Montserrat'],
         'nunito': ['Nunito Sans'],  
-      }
+      },
+      colors: {
+        'primary': '#F46B5B',
+        'secondary': '#383838',
+      },
     },
+
   },
   plugins: [],
 }
