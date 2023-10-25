@@ -18,6 +18,11 @@ export default {
         'primary': '#F46B5B',
         'secondary': '#383838',
       },
+      fontSize: {
+        'small': '18px',
+        'text56': '56px',
+       
+      }
     },
 
   },
