@@ -11,16 +11,22 @@ import SubHeading from './components/SubHeading'
 import One from "./assets/cetagori1.png"
 import Categori from './components/Categori'
 import Arrival from './components/Arrival'
-import Test from "./assets/arrival.png"
+import Test from "./assets/flash.png"
+import Flashsale from './components/Flashsale'
 
 function App() {
   return (
     <div className='m-10'>
       <Container>
-       
-          <Flex className="gap-x-10 flex-wrap">
-            <Arrival src={Test} alt="Test" badge="New" name="Smartphone 5G" price="$299.00"/>
+      
+
+          <Flex className="gap-x-5 flex-wrap">
+            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={50}/>
+            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={30}/>
+            <Flashsale src={Test} name="Wireless Headphone" price="$29.99" avilabelVale={10} soldValue={15} badge={0}/>
           </Flex>
+
+
      
       </Container>
     </div>
