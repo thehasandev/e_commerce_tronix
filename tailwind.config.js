@@ -22,6 +22,10 @@ export default {
         'small': '18px',
         'text56': '56px',
        
+      },
+      fontSize: {
+        'w154': '154px',
+       
       }
     },
 
