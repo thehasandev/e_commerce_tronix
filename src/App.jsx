@@ -11,10 +11,11 @@ import SubHeading from './components/SubHeading'
 import One from "./assets/cetagori1.png"
 import Categori from './components/Categori'
 import Arrival from './components/Arrival'
-import Test from "./assets/product.png"
+
 import Flashsale from './components/Flashsale'
 import Product from './components/Product'
-
+import Feature from './components/Feature'
+import Test from "./assets/feature.png"
 function App() {
   return (
     <div className='m-10'>
@@ -22,7 +23,8 @@ function App() {
       
 
           <Flex className="gap-x-5 flex-wrap">
-            <Product src={Test} name="Smart Mop Robot" price={5000} sold={55}/>
+           <Feature src={Test} name="This is One" badge="NEw" price={250} percent={20} subdiscount={33}/>
+        
        
           </Flex>
 
