@@ -6,8 +6,12 @@ import Image from './Image'
 import FooterTop from "../assets/footerTop.png"
 import Logo from "../assets/logo.png"
 import Contact from './Contact'
-import {BsFillTelephoneFill} from "react-icons/bs"
+import {BsFacebook, BsFillTelephoneFill, BsInstagram, BsTwitter} from "react-icons/bs"
 import {MdEmail} from "react-icons/md"
+import List from "./List"
+import FooterOne from "../assets/f1.png"
+import FooterTwo from "../assets/f2.png"
+import FooterThree from "../assets/f3.png"
 
 function Footer() {
   return (
@@ -35,8 +39,7 @@ function Footer() {
 
        <footer>
         <Container>
-            <Flex>
-
+            <Flex className="pt-14 pb-6 border-b border-gray">
                 <div className='w-1/2'>
                     <div className='w-1/2'>
                     <Image src={Logo}/> 
@@ -47,17 +50,69 @@ function Footer() {
                     </div>
                 </div>
 
-                <div className='w-1/2'>
-                    <div className='w-4/12'>
-                        
-                    </div>
-                    <div className='w-4/12'></div>
-                    <div></div>
-                 </div>
+
+                <Flex className='w-1/2'>
+
+                        <div className='w-1/3'>
+                            <h3 className="font-mon font-bold text-2xl text-secondary mb-8">Company</h3>
+                            <ul>
+                              <List text="About" className="mb-4"/>
+                              <List text="Products" className="mb-4"/>
+                              <List text="Contact" className="mb-4"/>
+                              <List text="Blog" className="mb-4"/>
+                              <List text="Careers" className="mb-4"/>
+                            </ul>
+                        </div>
+
+                         <div className='w-1/3'>
+                            <h3 className="font-mon font-bold text-2xl text-secondary mb-8">Information</h3>
+                            <ul>
+                              <List text="Help Center "  className="mb-4"/>
+                              <List text="Payment Methods" className="mb-4"/>
+                              <List text="Return & Refund" className="mb-4"/>
+                              <List text="Privacy Policy" className="mb-4"/>
+                            </ul>
+                        </div>
+
+                         <div className='w-1/3'>
+                            <h3 className="font-mon font-bold text-2xl text-secondary mb-8">Follow Us</h3>
+                              <Flex className="gap-x-8">
+                                  <div className='bg-primary w-14 h-14 text-white relative rounded-[8px]'>
+                                    <BsInstagram size={30} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'/>
+                                  </div>
+                                  <div className='bg-primary w-14 h-14 text-white relative rounded-[8px]'>
+                                    <BsTwitter size={30} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'/>
+                                  </div>
+                                  <div className='bg-primary w-14 h-14 text-white relative rounded-[8px]'>
+                                    <BsFacebook size={30} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'/>
+                                  </div>
+                              </Flex>
+                        </div>
+              
+
+                </Flex>
+
             </Flex>
 
         </Container>
        </footer>
+
+       <div>
+         <Container>
+          <Flex className="justify-between pt-6">
+            <div>
+              <p className='font-pop font-normal text-small text-secondary'>Copyright © 2021 Tronix. All Right Reseved</p>
+            </div>
+            
+            <div className='flex gap-x-8'>
+              <Image src={FooterOne}/>
+              <Image src={FooterTwo}/>
+              <Image src={FooterThree}/>
+            </div>
+
+          </Flex>
+         </Container>
+       </div>
     </>
   )
 }
