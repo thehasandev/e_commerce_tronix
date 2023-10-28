@@ -3,6 +3,7 @@ import cetagorData from "../Data/categori"
 import arrivalData from "../Data/arrival"
 import flashData from "../Data/flash"
 import featureData from "../Data/feature"
+import productData from "../Data/Product"
 
 import Section from '../components/Section'
 import Container from '../components/Container'
@@ -15,6 +16,8 @@ import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
 import Flashsale from "../components/Flashsale"
 import Feature from "../components/Feature"
+import Product from "../components/Product"
+
 import BannerSlide from "../assets/bannerSlide.png"
 import BannerOne from "../assets/bannerOne.png"
 import BannerTwo from "../assets/bannerTwo.png"
@@ -192,6 +195,22 @@ function Home() {
             
          </Flex>
      </Container>
+   </Section>
+
+   <Section>
+    <Container>
+        <Flex className="justify-between items-center">
+            <SubHeading text="Top Rated Product" className="mb-12"/>
+            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+        </Flex>
+        <Flex>
+            {
+              productData.map((item,index)=>(
+                  <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
+              ))
+            }
+        </Flex>
+    </Container>
    </Section>
 
     </>
