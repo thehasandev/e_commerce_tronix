@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from './Image'
-import Test from "../assets/feature.png"
+
 import Flex from './Flex'
 
 function Feature({src,alt,name,price,badge,subdiscount,percent}) {

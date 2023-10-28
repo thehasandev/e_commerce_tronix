@@ -13,6 +13,7 @@ import SubHeading from "../components/SubHeading"
 import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
 import Flashsale from "../components/Flashsale"
+import Feature from "../components/Feature"
 import BannerSlide from "../assets/bannerSlide.png"
 import BannerOne from "../assets/bannerOne.png"
 import BannerTwo from "../assets/bannerTwo.png"
@@ -23,6 +24,7 @@ import S4 from "../assets/s4.png"
 import S5 from "../assets/s5.png"
 import S6 from "../assets/s6.png"
 import Add from "../assets/add.png"
+
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
@@ -146,6 +148,27 @@ function Home() {
         <Image src={Add} className="mt-40"/>
      </Container>
    </Section>   
+
+   <Section className="my-40">
+     <Container>
+        <Flex className="justify-between items-center">
+                <SubHeading text="Featured Products" className="mb-12"/>
+                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
+        </Flex>
+
+         <Flex className="flex-wrap justify-between gap-y-5">
+            <div className='w-w376 bg-primary text-white pt-12 pb-[360px] px-12 rounded-lg'>
+                  <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
+                  <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                  <button className='font-pop font-nomal text-small hover:bg-secondary hover:text-white duration-500 hover:border-secondary px-4 py-2 rounded-lg border border-solid border-white'>Shop Now</button>
+            </div>
+            
+           <Feature />
+
+            
+         </Flex>
+     </Container>
+   </Section>
 
     </>
   )
