@@ -19,6 +19,7 @@ import Flashsale from "../components/Flashsale"
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
+    let [flashView,setFlashView] = useState(false)
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -105,15 +106,24 @@ function Home() {
          <Container>
             <Flex className="justify-between items-center">
                     <SubHeading text="Flash Sale" className="mb-12"/>
-                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
-                    <Flex>
-                        {
-                            flashData.map((item,index)=>(
-                                console.log(item)
-                            ))
-                        }
-                        <Flashsale/>
-                    </Flex>
+                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
+            </Flex>
+            
+            <Flex className="justify-between gap-y-10 flex-wrap">
+               {
+                flashView ?
+                flashData.map((item,index)=>(
+                    <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
+                ))
+                :
+                flashData.map((item,index)=>(
+                   index < 3 &&
+                    <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
+                ))
+               }
+                
+                
+            
             </Flex>
          </Container>
        </Section>

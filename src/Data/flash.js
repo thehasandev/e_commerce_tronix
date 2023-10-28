@@ -4,8 +4,8 @@ let flash =[
         name : "Wireless Headphone",
         price : 19.99,
         discount:19.99,
-        badge : "new",
-        avilabelVale: 10,
+        badge : "10",
+        avilabelValue: 10,
         soldValue:5
     },
     {
@@ -13,8 +13,8 @@ let flash =[
         name : "Air Purifier",
         price : 30.99,
         discount:39.99,
-        badge : "new",
-        avilabelVale: 8,
+        badge : "20",
+        avilabelValue: 8,
         soldValue:15
     },
     {
@@ -22,8 +22,8 @@ let flash =[
         name : "Bluetooth Printer",
         price : 22.99,
         discount:22.99,
-        badge : "new",
-        avilabelVale: 5,
+        badge : "44",
+        avilabelValue: 5,
         soldValue:9
     },
     {
@@ -31,8 +31,8 @@ let flash =[
         name : "Wireless Headphone",
         price : 19.99,
         discount:19.99,
-        badge : "new",
-        avilabelVale: 10,
+        badge : "10",
+        avilabelValue: 10,
         soldValue:5
     },
     {
@@ -40,8 +40,8 @@ let flash =[
         name : "Air Purifier",
         price : 30.99,
         discount:39.99,
-        badge : "new",
-        avilabelVale: 8,
+        badge : "30",
+        avilabelValue: 8,
         soldValue:15
     },
     {
@@ -49,8 +49,8 @@ let flash =[
         name : "Bluetooth Printer",
         price : 22.99,
         discount:22.99,
-        badge : "new",
-        avilabelVale: 5,
+        badge : "25",
+        avilabelValue: 5,
         soldValue:9
     },
 
