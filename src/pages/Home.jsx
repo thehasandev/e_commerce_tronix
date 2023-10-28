@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cetagorData from "../Data/categori"
 import arrivalData from "../Data/arrival"
+import flashData from "../Data/flash"
 
 import Section from '../components/Section'
 import Container from '../components/Container'
@@ -14,6 +15,7 @@ import Slider from "react-slick";
 import SubHeading from "../components/SubHeading"
 import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
+import Flashsale from "../components/Flashsale"
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
@@ -61,7 +63,7 @@ function Home() {
 
        <Section className="my-20">
           <Container>
-             <SubHeading text="Category" className="mb-10"/>
+             <SubHeading text="Category" className="mb-12"/>
              <Flex className="justify-between">
                 {
                     cetagorData.map((item,index)=>(
@@ -76,7 +78,7 @@ function Home() {
        <Section>
          <Container>
             <Flex className="justify-between items-center">
-                <SubHeading text="New Arrival" className="mb-10"/>
+                <SubHeading text="New Arrival" className="mb-12"/>
                 <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
             </Flex>
 
@@ -96,6 +98,23 @@ function Home() {
               
               
            </Flex>
+         </Container>
+       </Section>
+
+       <Section className="my-20">
+         <Container>
+            <Flex className="justify-between items-center">
+                    <SubHeading text="Flash Sale" className="mb-12"/>
+                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+                    <Flex>
+                        {
+                            flashData.map((item,index)=>(
+                                console.log(item)
+                            ))
+                        }
+                        <Flashsale/>
+                    </Flex>
+            </Flex>
          </Container>
        </Section>
 
