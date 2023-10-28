@@ -55,7 +55,21 @@ function Home() {
        </Section>
 
 
-       
+       <Section className="my-20">
+          <Container>
+             <SubHeading text="Category" className="mb-10"/>
+             <Flex className="justify-between">
+                {
+                    cetagorData.map((item,index)=>(
+
+                        <Categori key={index} src={item.url} text={item.name}/>
+
+                    ))
+                }
+             </Flex>
+              
+          </Container>
+       </Section>
     </>
   )
 }
