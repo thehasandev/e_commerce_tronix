@@ -61,8 +61,8 @@ function Home() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        nextArrow: <NextArrow />,
-        prevArrow: <PreviousArrow/>
+        nextArrow: <NextArrow class="absolute top-1/2 -translate-y-1/2 right-0"/>,
+        prevArrow: <PreviousArrow class="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden"/>
       }; 
 
   return (
