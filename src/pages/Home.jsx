@@ -7,15 +7,22 @@ import Section from '../components/Section'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import Image from '../components/Image'
-import BannerSlide from "../assets/bannerSlide.png"
-import BannerOne from "../assets/bannerOne.png"
-import BannerTwo from "../assets/bannerTwo.png"
 import "slick-carousel/slick/slick.css"; 
 import Slider from "react-slick";
 import SubHeading from "../components/SubHeading"
 import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
 import Flashsale from "../components/Flashsale"
+import BannerSlide from "../assets/bannerSlide.png"
+import BannerOne from "../assets/bannerOne.png"
+import BannerTwo from "../assets/bannerTwo.png"
+import S1 from "../assets/s1.png"
+import S2 from "../assets/s2.png"
+import S3 from "../assets/s3.png"
+import S4 from "../assets/s4.png"
+import S5 from "../assets/s5.png"
+import S6 from "../assets/s6.png"
+import Add from "../assets/add.png"
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
@@ -120,13 +127,25 @@ function Home() {
                    index < 3 &&
                     <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
                 ))
-               }
-                
-                
+               }  
             
             </Flex>
          </Container>
        </Section>
+
+   <Section>
+     <Container>
+        <Flex className="justify-between">
+            <Image src={S1}/>
+            <Image src={S2}/>
+            <Image src={S3}/>
+            <Image src={S4}/>
+            <Image src={S5}/>
+            <Image src={S6}/>
+        </Flex>
+        <Image src={Add} className="mt-40"/>
+     </Container>
+   </Section>   
 
     </>
   )
