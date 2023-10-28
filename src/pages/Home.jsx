@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cetagorData from "../Data/categori"
+import arrivalData from "../Data/arrival"
 
 import Section from '../components/Section'
 import Container from '../components/Container'
@@ -15,6 +16,7 @@ import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
 
 function Home() {
+    let [arrivalView,setArrivalView] = useState(false)
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -73,9 +75,26 @@ function Home() {
        
        <Section>
          <Container>
-           <SubHeading text="New Arrival"/>
-           <Flex>
-             <Arrival/>
+            <Flex className="justify-between items-center">
+                <SubHeading text="New Arrival" className="mb-10"/>
+                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+            </Flex>
+
+           <Flex className="justify-between flex-wrap gap-y-8">
+              {
+                arrivalView ? 
+                    arrivalData.map((item,index)=>(
+                     <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
+                    ))
+                    :
+                    arrivalData.map((item,index)=>(
+                    index<3 &&
+                        <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
+                    ))
+                
+               }  
+              
+              
            </Flex>
          </Container>
        </Section>

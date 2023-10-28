@@ -15,7 +15,7 @@ function Arrival({src,alt,badge,name,price}) {
 
       <Flex className='w-1/2 flex-col items-center justify-center'>
         <h3 className='font-pop font-normal text-2xl text-secondary '>{name}</h3>
-        <h4 className='font-pop font-bold text-2xl text-secondary mt-2 mb-4'>{price}</h4>
+        <h4 className='font-pop font-bold text-2xl text-secondary mt-2 mb-4'>{`$${price}:00`}</h4>
         <Flex className="gap-x-6">
 
            <div className='flex items-center gap-x-2 relative after:absolute after:h-5 after:w-[1px] after:bg-gray after:top-0 after:-right-4 '>
