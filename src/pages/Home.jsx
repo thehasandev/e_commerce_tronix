@@ -29,6 +29,7 @@ import S5 from "../assets/s5.png"
 import S6 from "../assets/s6.png"
 import Add from "../assets/add.png"
 import PreviousArrow from "../components/PreviousArrow"
+import NextArrow from '../components/NextArrow'
 
 
 function Home() {
@@ -60,6 +61,7 @@ function Home() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
+        nextArrow: <NextArrow />,
         prevArrow: <PreviousArrow/>
       }; 
 
