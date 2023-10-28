@@ -1,4 +1,5 @@
 import React from 'react'
+import cetagorData from "../Data/categori"
 
 import Section from '../components/Section'
 import Container from '../components/Container'
@@ -9,6 +10,8 @@ import BannerOne from "../assets/bannerOne.png"
 import BannerTwo from "../assets/bannerTwo.png"
 import "slick-carousel/slick/slick.css"; 
 import Slider from "react-slick";
+import SubHeading from "../components/SubHeading"
+import Categori from "../components/Categori"
 function Home() {
     const bannerSlide = {
         dots: true,
@@ -43,9 +46,6 @@ function Home() {
                 <Image src={BannerSlide}/>
               </Slider>
               </div>
-            
-
-
               <div className='1/3'>
                 <Image src={BannerOne} className="mb-8"/>
                 <Image src={BannerTwo}/>
@@ -55,6 +55,7 @@ function Home() {
        </Section>
 
 
+       
     </>
   )
 }
