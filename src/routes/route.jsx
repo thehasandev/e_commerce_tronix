@@ -5,6 +5,10 @@ import RoutLayouts from '../components/RoutLayouts/RoutLayouts';
 import { ErrorPage } from '../pages/Errorpage';
 import Home from '../pages/Home';
 import About from '../pages/About';
+import ProductPage from '../pages/ProductPage';
+import Blog from '../pages/Blog';
+import Contact from '../components/Contact';
+import ContactPage from '../pages/ContactPage';
 
 
 
@@ -20,6 +24,18 @@ const route = createBrowserRouter([
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
+        },
+        {
+          path: "/product",
+          element: <ProductPage />,
+        },
+        {
+          path: "/contact",
+          element: <ContactPage />,
         },
         {
           path: "*",

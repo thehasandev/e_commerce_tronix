@@ -136,7 +136,7 @@ function Home() {
         <Slider {...flashSlide}>
             {
                 flashData.map((item,index)=>(
-                 <div>
+                 <div key={index}>
                      <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
                  </div>
                 ))

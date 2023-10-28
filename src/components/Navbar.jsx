@@ -10,9 +10,17 @@ import Image from './Image'
 import Logo from "../assets/logo.png"
 import List from './List'
 import Container from './Container'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { move } from '../slices/bradcumb'
 
 
 function Navbar() {
+  let dispatch = useDispatch()
+
+  let handleSubmit =(data)=>{
+    dispatch(move(data))
+  }
   return (
     <>
         <Section className="mb-8">
@@ -40,11 +48,38 @@ function Navbar() {
 
                   <div className='w-5/12'>
                     <ul className='flex gap-x-12'>
-                        <List text="Home"/>
-                        <List text="About"/>
-                        <List text="Product"/>
-                        <List text="Blog"/>
-                        <List text="Contact"/>
+
+                      <Link to="/">
+                        <div onClick={()=>{handleSubmit("Home")}}>
+                          <List  text="Home"/>
+                        </div>
+                      </Link>
+
+                      <Link to="/about">
+                        <div onClick={()=>{handleSubmit("About")}}>
+                          <List text="About"/>
+                        </div>
+                      </Link>
+
+                      <Link to="/product">
+                        <div onClick={()=>{handleSubmit("Product")}}>
+                          <List text="Product"/>
+                        </div>
+                      </Link>
+
+                      <Link to="/blog">
+                        <div onClick={()=>{handleSubmit("Blog")}}>
+                          <List text="Blog"/>
+                        </div>
+                      </Link>
+
+                      <Link to="/contact">
+                        <div onClick={()=>{handleSubmit("Contact")}}>
+                          <List text="Contact"/>
+                        </div>
+                      </Link>
+                       
+    
                     </ul>
                   </div>
 

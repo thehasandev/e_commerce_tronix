@@ -3,11 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 export const bradcumb = createSlice({
   name: 'bradcumb',
   initialState: {
-    value: 0,
+    currentPage: "aa",
+    previousPage:""
   },
   reducers: {
-    currentPage: (state,action) => {
-       console.log();
+    move: (state,action) => {
+       state.previousPage = state.currentPage
+       state.currentPage = action.payload
     },
    
   
@@ -15,6 +17,6 @@ export const bradcumb = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { currentPage } = bradcumb.actions
+export const { move } = bradcumb.actions
 
 export default bradcumb.reducer
