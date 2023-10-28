@@ -15,7 +15,7 @@ import Container from './Container'
 function Navbar() {
   return (
     <>
-        <Section>
+        <Section className="mb-8">
           <Container>
               <Flex className="justify-between py-4">
                   <Flex className='w-2/12 text-gray gap-x-8 '>
