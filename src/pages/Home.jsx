@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import cetagorData from "../Data/categori"
 import arrivalData from "../Data/arrival"
 import flashData from "../Data/flash"
+import featureData from "../Data/feature"
 
 import Section from '../components/Section'
 import Container from '../components/Container'
@@ -29,6 +30,7 @@ import Add from "../assets/add.png"
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
     let [flashView,setFlashView] = useState(false)
+    let [featureView,setFeatureView] = useState(false)
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -151,19 +153,41 @@ function Home() {
 
    <Section className="my-40">
      <Container>
-        <Flex className="justify-between items-center">
-                <SubHeading text="Featured Products" className="mb-12"/>
-                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
-        </Flex>
+            
 
-         <Flex className="flex-wrap justify-between gap-y-5">
-            <div className='w-w376 bg-primary text-white pt-12 pb-[360px] px-12 rounded-lg'>
-                  <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
-                  <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                  <button className='font-pop font-nomal text-small hover:bg-secondary hover:text-white duration-500 hover:border-secondary px-4 py-2 rounded-lg border border-solid border-white'>Shop Now</button>
+         <Flex >
+            <div className='w-w376'>
+                <div className='w-full bg-primary text-white pt-12 pb-[300px] px-12 rounded-lg'>
+                    <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
+                    <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    <button className='font-pop font-nomal text-small hover:bg-secondary hover:text-white duration-500 hover:border-secondary px-4 py-2 rounded-lg border border-solid border-white'>Shop Now</button>
+                </div>
             </div>
             
-           <Feature />
+           <div className='w-full'>
+                <Flex className="justify-between items-center">
+                    <SubHeading text="Featured Products" className="mb-8 px-10"/>
+                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFeatureView(!featureView)}}>View All</p>
+                </Flex>
+            <div className='w-full flex flex-wrap gap-10 justify-center'>
+                {
+                featureView ? 
+                featureData.map((item,index)=>(
+                
+                    <Feature src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
+                
+    
+                ))
+                :
+                featureData.map((item,index)=>(
+                    index < 3 &&
+                    <Feature src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
+    
+                ))
+                }
+                
+            </div>
+           </div>
 
             
          </Flex>

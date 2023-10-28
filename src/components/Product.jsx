@@ -24,7 +24,7 @@ function Product({src,alt,name,price,sold}) {
 
         </Flex>
         <Flex className="items-center gap-x-4">
-          <button className='bg-primary font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
+          <button className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
            <AiFillHeart size={20} className='text-gray'/>
         </Flex>
       </Flex>
