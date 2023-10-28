@@ -10,7 +10,7 @@ let feature =[
     },
     {
         url : "/images/feature.png",
-        name : "Wireless Smart Watch New Series",
+        name : "Wireless Smart  New Series",
         price : 99.99,
         subdiscount:19.99,
         badge: "new",

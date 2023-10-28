@@ -28,12 +28,14 @@ import S4 from "../assets/s4.png"
 import S5 from "../assets/s5.png"
 import S6 from "../assets/s6.png"
 import Add from "../assets/add.png"
+import PreviousArrow from "../components/PreviousArrow"
 
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
     let [flashView,setFlashView] = useState(false)
     let [featureView,setFeatureView] = useState(false)
+    let [productView,setProductView] = useState(false)
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -53,114 +55,115 @@ function Home() {
           )
       };
 
+      const flashSlide = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        prevArrow: <PreviousArrow/>
+      }; 
+
   return (
     <>
-       <Section>
+    <Section>
+    <Container>
+        <Flex className="justify-between">
+            <div className='w-2/3'>
+            <Slider {...bannerSlide}>
+            <Image src={BannerSlide}/>
+            <Image src={BannerSlide}/>
+            <Image src={BannerSlide}/>
+            <Image src={BannerSlide}/>
+            <Image src={BannerSlide}/>
+            <Image src={BannerSlide}/>
+            </Slider>
+            </div>
+            <div className='1/3'>
+            <Image src={BannerOne} className="mb-8"/>
+            <Image src={BannerTwo}/>
+            </div>
+        </Flex>
+    </Container>
+    </Section>
+
+    <Section className="my-40">
         <Container>
+            <SubHeading text="Category" className="mb-12"/>
             <Flex className="justify-between">
-              <div className='w-2/3'>
-              <Slider {...bannerSlide}>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-              </Slider>
-              </div>
-              <div className='1/3'>
-                <Image src={BannerOne} className="mb-8"/>
-                <Image src={BannerTwo}/>
-              </div>
-            </Flex>
-        </Container>
-       </Section>
-
-       <Section className="my-40">
-          <Container>
-             <SubHeading text="Category" className="mb-12"/>
-             <Flex className="justify-between">
-                {
-                    cetagorData.map((item,index)=>(
-                        <Categori key={index} src={item.url} text={item.name}/>
-                    ))
-                }
-             </Flex>
-              
-          </Container>
-       </Section>
-       
-       <Section>
-         <Container>
-            <Flex className="justify-between items-center">
-                <SubHeading text="New Arrival" className="mb-12"/>
-                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
-            </Flex>
-
-           <Flex className="justify-between flex-wrap gap-y-8">
-              {
-                arrivalView ? 
-                    arrivalData.map((item,index)=>(
-                     <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
-                    ))
-                    :
-                    arrivalData.map((item,index)=>(
-                    index<3 &&
-                        <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
-                    ))
-                
-               }  
-              
-              
-           </Flex>
-         </Container>
-       </Section>
-
-       <Section className="my-40">
-         <Container>
-            <Flex className="justify-between items-center">
-                    <SubHeading text="Flash Sale" className="mb-12"/>
-                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
+            {
+                cetagorData.map((item,index)=>(
+                    <Categori key={index} src={item.url} text={item.name}/>
+                ))
+            }
             </Flex>
             
-            <Flex className="justify-between gap-y-10 flex-wrap">
-               {
-                flashView ?
-                flashData.map((item,index)=>(
-                    <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
+        </Container>
+    </Section>
+    
+    <Section>
+        <Container>
+        <Flex className="justify-between items-center">
+            <SubHeading text="New Arrival" className="mb-12"/>
+            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+        </Flex>
+
+        <Flex className="justify-between flex-wrap gap-y-8">
+            {
+            arrivalView ? 
+                arrivalData.map((item,index)=>(
+                    <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
                 ))
                 :
-                flashData.map((item,index)=>(
-                   index < 3 &&
-                    <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
+                arrivalData.map((item,index)=>(
+                index<3 &&
+                    <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
                 ))
-               }  
-            
-            </Flex>
-         </Container>
-       </Section>
-
-   <Section>
-     <Container>
-        <Flex className="justify-between">
-            <Image src={S1}/>
-            <Image src={S2}/>
-            <Image src={S3}/>
-            <Image src={S4}/>
-            <Image src={S5}/>
-            <Image src={S6}/>
+            }  
         </Flex>
-        <Image src={Add} className="mt-40"/>
-     </Container>
-   </Section>   
+        </Container>
+    </Section>
+
+    <Section className="my-40">
+        <Container>
+        <Flex className="justify-between items-center">
+                <SubHeading text="Flash Sale" className="mb-12"/>
+                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
+        </Flex>
+        
+        
+        <Slider {...flashSlide}>
+            {
+                flashData.map((item,index)=>(
+                 <div>
+                     <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
+                 </div>
+                ))
+            }
+        </Slider>
+      
+        </Container>
+    </Section>
+
+    <Section>
+        <Container>
+            <Flex className="justify-between">
+                <Image src={S1}/>
+                <Image src={S2}/>
+                <Image src={S3}/>
+                <Image src={S4}/>
+                <Image src={S5}/>
+                <Image src={S6}/>
+            </Flex>
+            <Image src={Add} className="mt-40"/>
+        </Container>
+    </Section>   
 
    <Section className="my-40">
      <Container>
             
-
          <Flex >
             <div className='w-w376'>
-                <div className='w-full bg-primary text-white pt-12 pb-[300px] px-12 rounded-lg'>
+                <div className='w-full bg-primary text-white pt-12 pb-[360px] px-12 rounded-lg'>
                     <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
                     <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                     <button className='font-pop font-nomal text-small hover:bg-secondary hover:text-white duration-500 hover:border-secondary px-4 py-2 rounded-lg border border-solid border-white'>Shop Now</button>
@@ -177,15 +180,12 @@ function Home() {
                 featureView ? 
                 featureData.map((item,index)=>(
                 
-                    <Feature src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
-                
-    
+                    <Feature key={index} src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
                 ))
                 :
                 featureData.map((item,index)=>(
                     index < 3 &&
-                    <Feature src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
-    
+                    <Feature key={index} src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
                 ))
                 }
                 
@@ -201,14 +201,24 @@ function Home() {
     <Container>
         <Flex className="justify-between items-center">
             <SubHeading text="Top Rated Product" className="mb-12"/>
-            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setProductView(!productView)}}>View All</p>
         </Flex>
-        <Flex>
+        <Flex className="flex-wrap gap-6">
             {
-              productData.map((item,index)=>(
-                  <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
-              ))
+                productView ? 
+                    productData.map((item,index)=>(
+                        <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
+                    ))
+                :
+             
+                productData.map((item,index)=>(
+                    index < 4 &&
+                    <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
+                ))
+
+
             }
+         
         </Flex>
     </Container>
    </Section>
