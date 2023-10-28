@@ -69,7 +69,7 @@ function Home() {
         </Container>
        </Section>
 
-       <Section className="my-20">
+       <Section className="my-40">
           <Container>
              <SubHeading text="Category" className="mb-12"/>
              <Flex className="justify-between">
@@ -109,7 +109,7 @@ function Home() {
          </Container>
        </Section>
 
-       <Section className="my-20">
+       <Section className="my-40">
          <Container>
             <Flex className="justify-between items-center">
                     <SubHeading text="Flash Sale" className="mb-12"/>

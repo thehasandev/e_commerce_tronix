@@ -16,7 +16,7 @@ import FooterThree from "../assets/f3.png"
 function Footer() {
   return (
     <>
-       <Section className="bg-primary py-[69px] mt-[160px]">
+       <Section className="bg-primary py-[69px] mt-40">
            <Container>
               <Flex className="items-center gap-x-8">
                  <div className='w-1/12'>
