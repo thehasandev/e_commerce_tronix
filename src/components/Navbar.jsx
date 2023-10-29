@@ -4,16 +4,18 @@ import Flex from './Flex'
 import {BsInstagram,BsFillTelephoneFill} from "react-icons/bs"
 import {BiSolidCart} from "react-icons/bi"
 import {MdEmail} from "react-icons/md"
-import {AiFillLinkedin,AiOutlineTwitter,AiFillFacebook,AiOutlineUser,AiOutlineSearch} from "react-icons/ai"
+import {AiFillLinkedin,AiOutlineTwitter,AiFillFacebook,AiOutlineUser,AiOutlineSearch,AiOutlineCloseSquare} from "react-icons/ai"
 import Contact from './Contact'
 import Image from './Image'
 import Logo from "../assets/logo.png"
 import List from './List'
 import Container from './Container'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { move } from '../slices/bradcumb'
-
+import SubHeading from "../components/SubHeading"
+import ProdutcImg from "../assets/product.png"
+import { increment,decrement,removeCart } from '../slices/cartSlice'
 
 function Navbar() {
   let dispatch = useDispatch()
@@ -22,6 +24,18 @@ function Navbar() {
     dispatch(move(data))
   }
   let [open,setOpen] =useState(false)
+  let cartdata =useSelector((state)=>state.cart.cartItem)
+
+  let handleIncrement =(item)=>{
+       dispatch(increment(item))
+  }
+  let handleDecrement =(item)=>{
+       dispatch(decrement(item))
+  }
+  let handleRemove =(item)=>{
+    dispatch(removeCart(item))
+
+    }
   return (
     <>
         <Section className="mb-8">
@@ -96,10 +110,70 @@ function Navbar() {
                         <MdEmail size={25} className='text-secondary'/>
                   </Flex>
                    
+                   {/* add to cart sidebar  */}
                    {
                     open &&
-                    <div className='w-1/2 h-screen bg-primary absolute top-0 right-0 z-10'>
+                    <div className='w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 right-0 z-10'>
                       <BiSolidCart size={25} className='text-secondary' onClick={()=>{setOpen(false)}}/>
+                       
+                      <SubHeading text="SHOPPING CART" className=" border-b border-solid px-2 border-primary pb-5"/>
+                        
+                        <ul className='flex justify-between mt-5 px-2 '>
+                           <li className='font-dm font-bold text-base text-secondary'>Action</li>
+                           <li className='font-dm font-bold text-base text-secondary'>Product</li>
+                           <li className='font-dm font-bold text-base text-secondary'>Name</li>
+                           <li className='font-dm font-bold text-base text-secondary'>Price</li>
+                           <li className='font-dm font-bold text-base text-secondary'>Quantity</li>
+                           <li className='font-dm font-bold text-base text-secondary'>Subtotal</li>
+                        </ul>
+                       
+                       
+                      {
+                        cartdata &&
+                        cartdata.map((item,index)=>{
+                   return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
+                             
+                             <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
+                               <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
+                             </li>
+                             
+                             <li className='w-16 mr-1 '>
+                               <img src={item.url} alt="" className='w-full'/>
+                             </li>
+
+                             <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
+                              {item.name}
+                              
+                             </li>
+
+                             <li className='w-[100px]  font-dm font-medium text-base  text-white'>
+                               {item.price}
+                             </li>
+
+                             <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
+                               <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
+                                 {item.quantity}
+                               <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
+                             </li>
+
+                             <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
+                               {item.price*item.quantity}
+                             </li>
+                        </ul>
+                         
+                        })
+                      }
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                    }
               </nav>
