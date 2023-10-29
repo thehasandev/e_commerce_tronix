@@ -2,7 +2,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Wireless Headphone",
-        price : 19.99,
+        price : 19,
         discount:19.99,
         badge : "10",
         avilabelValue: 10,
@@ -11,7 +11,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Air Purifier",
-        price : 30.99,
+        price : 30,
         discount:39.99,
         badge : "20",
         avilabelValue: 8,
@@ -20,7 +20,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Bluetooth Printer",
-        price : 22.99,
+        price : 22,
         discount:22.99,
         badge : "44",
         avilabelValue: 5,
@@ -29,7 +29,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Wireless Headphone",
-        price : 19.99,
+        price : 19,
         discount:19.99,
         badge : "10",
         avilabelValue: 10,
@@ -38,7 +38,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Air Purifier",
-        price : 30.99,
+        price : 30,
         discount:39.99,
         badge : "30",
         avilabelValue: 8,
@@ -47,7 +47,7 @@ let flash =[
     {
         url : "/images/flash.png",
         name : "Bluetooth Printer",
-        price : 22.99,
+        price : 22,
         discount:22.99,
         badge : "25",
         avilabelValue: 5,
