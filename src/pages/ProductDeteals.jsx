@@ -175,7 +175,25 @@ function ProductDeteals() {
 
              </div>
              <div className='w-5/12'>
-               <Input/>
+              <h3 className='font-pop font-bold text-lg text-secondary '>Add Your Review</h3>
+              <p  className='font-pop font-normal text-small text-gray w-[480px] mt-4 mb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.  </p>
+               <Input name="Name *" text="text"/>
+               <Input name="Eamil *" text="text" className="my-8"/>
+              
+               <p className='font-pop font-normal text-small text-secondary mb-4'>Review</p>
+               <textarea className='w-full border border-solid border-[#A7A7A7] px-5 py-4 rounded-lg'></textarea>
+               
+               <Flex className="items-center mt-10 mb-16 gap-x-2">
+                <div>
+                  <h3 className='font-pop font-semibold text-lg text-secondary mr-8'>Rating</h3>
+                </div>
+                  <AiFillStar size={25} className='text-[#FFD687]'/>
+                  <AiFillStar size={25} className='text-[#FFD687]'/>
+                  <AiFillStar size={25} className='text-[#FFD687]'/>
+                  <AiFillStar size={25} className='text-[#FFD687]'/>
+                  <AiFillStar size={25} className='text-[#FFD687]'/>
+               </Flex>
+               <button className='font-pop font-medium bg-primary  duration-300 text-white hover:text-secondary border border-solid border-primary px-12 py-4 text-lg rounded-lg hover:bg-transparent'>Submit </button>
              </div>
            </Flex>
         </Container>
