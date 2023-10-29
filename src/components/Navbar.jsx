@@ -4,7 +4,7 @@ import Flex from './Flex'
 import {BsInstagram,BsFillTelephoneFill} from "react-icons/bs"
 import {BiSolidCart} from "react-icons/bi"
 import {MdEmail} from "react-icons/md"
-import {AiFillLinkedin,AiOutlineTwitter,AiFillFacebook,AiOutlineUser,AiOutlineSearch,AiOutlineCloseSquare} from "react-icons/ai"
+import {AiFillLinkedin,AiOutlineTwitter,AiFillFacebook,AiOutlineUser,AiOutlineSearch,AiOutlineCloseSquare, AiOutlineClose} from "react-icons/ai"
 import Contact from './Contact'
 import Image from './Image'
 import Logo from "../assets/logo.png"
@@ -105,16 +105,19 @@ function Navbar() {
                       </div>
                   </div>
 
-                  <Flex className='w-1/12 gap-x-8  justify-end'>
-                        <BiSolidCart size={25} className='text-secondary' onClick={()=>{setOpen(true)}}/>
+                  <Flex className='w-1/12 gap-x-8  justify-end relative'>
+                        <BiSolidCart size={25} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
                         <MdEmail size={25} className='text-secondary'/>
+                  <p className='absolute font-pop text-xl font-medium text-primary  -top-3 left-1/2 translate-x-1/2'>{cartdata.length}</p>
                   </Flex>
                    
                    {/* add to cart sidebar  */}
                    {
                     open &&
                     <div className='w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 right-0 z-10'>
-                      <BiSolidCart size={25} className='text-secondary' onClick={()=>{setOpen(false)}}/>
+                      <Flex className="justify-end">
+                        <AiOutlineClose size={25} className='text-secondary cursor-pointer m-5' onClick={()=>{setOpen(false)}}/>
+                      </Flex>
                        
                       <SubHeading text="SHOPPING CART" className=" border-b border-solid px-2 border-primary pb-5"/>
                         
@@ -127,42 +130,47 @@ function Navbar() {
                            <li className='font-dm font-bold text-base text-secondary'>Subtotal</li>
                         </ul>
                        
-                       
-                      {
-                        cartdata &&
-                        cartdata.map((item,index)=>{
-                   return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
-                             
-                             <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
-                               <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
-                             </li>
-                             
-                             <li className='w-16 mr-1 '>
-                               <img src={item.url} alt="" className='w-full'/>
-                             </li>
-
-                             <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
-                              {item.name}
+                       {
+                         cartdata.length >0 ?
+                      
+                            cartdata.map((item,index)=>{
+                        return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
+                                  
+                                  <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
+                                    <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
+                                  </li>
+                                  
+                                  <li className='w-16 mr-1 '>
+                                    <img src={item.url} alt="" className='w-full'/>
+                                  </li>
+    
+                                  <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
+                                  {item.name}
+                                  
+                                  </li>
+    
+                                  <li className='w-[100px]  font-dm font-medium text-base  text-white'>
+                                    {item.price}
+                                  </li>
+    
+                                  <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
+                                    <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
+                                      {item.quantity}
+                                    <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
+                                  </li>
+    
+                                  <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
+                                    {item.price*item.quantity}
+                                  </li>
+                              </ul>
                               
-                             </li>
+                            })
+                          
+                        
+                         :
+                          <SubHeading text="Cart is Empty" className=" flex items-center justify-center h-full "/>
+                       }
 
-                             <li className='w-[100px]  font-dm font-medium text-base  text-white'>
-                               {item.price}
-                             </li>
-
-                             <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
-                               <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
-                                 {item.quantity}
-                               <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
-                             </li>
-
-                             <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
-                               {item.price*item.quantity}
-                             </li>
-                        </ul>
-                         
-                        })
-                      }
 
 
 
