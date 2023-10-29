@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Section from './Section'
 import Flex from './Flex'
 import {BsInstagram,BsFillTelephoneFill} from "react-icons/bs"
@@ -21,6 +21,7 @@ function Navbar() {
   let handleSubmit =(data)=>{
     dispatch(move(data))
   }
+  let [open,setOpen] =useState(false)
   return (
     <>
         <Section className="mb-8">
@@ -91,9 +92,16 @@ function Navbar() {
                   </div>
 
                   <Flex className='w-1/12 gap-x-8  justify-end'>
-                        <BiSolidCart size={25} className='text-secondary'/>
+                        <BiSolidCart size={25} className='text-secondary' onClick={()=>{setOpen(true)}}/>
                         <MdEmail size={25} className='text-secondary'/>
                   </Flex>
+                   
+                   {
+                    open &&
+                    <div className='w-1/2 h-screen bg-primary absolute top-0 right-0 z-10'>
+                      <BiSolidCart size={25} className='text-secondary' onClick={()=>{setOpen(false)}}/>
+                    </div>
+                   }
               </nav>
             
           </Container>
