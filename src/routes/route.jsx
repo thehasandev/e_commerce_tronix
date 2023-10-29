@@ -10,6 +10,7 @@ import Blog from '../pages/Blog';
 import Contact from '../components/Contact';
 import ContactPage from '../pages/ContactPage';
 import Cart from '../pages/Cart';
+import ProductDeteals from '../pages/ProductDeteals';
 
 
 
@@ -41,6 +42,10 @@ const route = createBrowserRouter([
         {
           path: "/cart",
           element: <Cart />,
+        },
+        {
+          path: "/product-deteals",
+          element: <ProductDeteals />,
         },
         {
           path: "*",
