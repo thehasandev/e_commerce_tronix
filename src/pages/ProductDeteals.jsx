@@ -13,6 +13,7 @@ import Review from '../components/Review'
 import ReviewImg from "../assets/review.png"
 import Gift from "../assets/gift.jpg"
 import { useState } from 'react'
+import Input from '../components/Input'
 function ProductDeteals() {
   let [review,setReview] = useState(true)
   let [discription,setDiscriptin] = useState(false)
@@ -173,7 +174,9 @@ function ProductDeteals() {
               
 
              </div>
-             <div className='w-5/12'></div>
+             <div className='w-5/12'>
+               <Input/>
+             </div>
            </Flex>
         </Container>
       </Section>
