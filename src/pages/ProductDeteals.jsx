@@ -9,6 +9,8 @@ import {AiFillStar,AiFillHeart} from "react-icons/ai"
 import Delivary from "../assets/delivery.png"
 import Voucher from "../assets/voucher.png"
 import Stock from "../assets/Package.png"
+import Review from '../components/Review'
+import ReviewImg from "../assets/review.png"
 function ProductDeteals() {
   return (
     <>
@@ -23,8 +25,6 @@ function ProductDeteals() {
                    <Image src={ProductDetails}/>
                  </Flex>
                </div>
-
-
 
                <div className='w-6/12'>
                    <Flex>
@@ -88,6 +88,17 @@ function ProductDeteals() {
                   </Flex>
                </div>
             </Flex>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+           <Flex className="justify-between">
+             <div className='w-6/12'>
+               <Review url={ReviewImg} name="Vanille" time="1 Month Ago"/>
+             </div>
+             <div className='w-5/12'></div>
+           </Flex>
         </Container>
       </Section>
        
