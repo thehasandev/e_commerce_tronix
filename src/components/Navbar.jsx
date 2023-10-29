@@ -132,39 +132,51 @@ function Navbar() {
                        
                        {
                          cartdata.length >0 ?
+                        <>{
+                              cartdata.map((item,index)=>{
+                          return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
+                                    
+                                    <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
+                                      <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
+                                    </li>
+                                    
+                                    <li className='w-16 mr-1 '>
+                                      <img src={item.url} alt="" className='w-full'/>
+                                    </li>
+      
+                                    <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
+                                    {item.name}
+                                    
+                                    </li>
+      
+                                    <li className='w-[100px]  font-dm font-medium text-base  text-white'>
+                                      {item.price}
+                                    </li>
+      
+                                    <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
+                                      <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
+                                        {item.quantity}
+                                      <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
+                                    </li>
+      
+                                    <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
+                                      {item.price*item.quantity}
+                                    </li>
+                                </ul>
+                                
+                              })
+
+                            }
+                            <div className='mt-8 flex justify-center gap-x-5'>
+                              <button className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Veiw Cart</button>
+                              <button className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Cheak Out</button>
+
+                            </div>
+                              <h3 className='font-pop font-bold text-right text-xl text-secondary mr-16 mt-5 '>Tottal: 1000</h3>
+
+        
+                         </>
                       
-                            cartdata.map((item,index)=>{
-                        return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
-                                  
-                                  <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
-                                    <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
-                                  </li>
-                                  
-                                  <li className='w-16 mr-1 '>
-                                    <img src={item.url} alt="" className='w-full'/>
-                                  </li>
-    
-                                  <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
-                                  {item.name}
-                                  
-                                  </li>
-    
-                                  <li className='w-[100px]  font-dm font-medium text-base  text-white'>
-                                    {item.price}
-                                  </li>
-    
-                                  <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
-                                    <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
-                                      {item.quantity}
-                                    <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
-                                  </li>
-    
-                                  <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
-                                    {item.price*item.quantity}
-                                  </li>
-                              </ul>
-                              
-                            })
                           
                         
                          :
