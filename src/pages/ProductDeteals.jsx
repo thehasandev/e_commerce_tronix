@@ -11,7 +11,38 @@ import Voucher from "../assets/voucher.png"
 import Stock from "../assets/Package.png"
 import Review from '../components/Review'
 import ReviewImg from "../assets/review.png"
+import Gift from "../assets/gift.jpg"
+import { useState } from 'react'
 function ProductDeteals() {
+  let [review,setReview] = useState(true)
+  let [discription,setDiscriptin] = useState(false)
+  let [dissicun,setDissicun] = useState(false)
+  let [gift,setGift] = useState(false)
+
+     let handleReviews =()=>{
+       setReview(true)
+       setDissicun(false)
+       setDiscriptin(false)
+       setGift(false)
+     }
+     let handleDisciption =()=>{
+        setDiscriptin(true)
+        setReview(false)
+        setDissicun(false)
+        setGift(false)
+     }
+     let handleDissicun=()=>{
+        setDissicun(true)
+        setReview(false)
+        setDiscriptin(false)
+        setGift(false)
+     }
+     let handleGift =()=>{
+      setGift(true)
+      setDissicun(false)
+      setDiscriptin(false)
+      setReview(false)
+     }
   return (
     <>
       <Section>
@@ -91,11 +122,56 @@ function ProductDeteals() {
         </Container>
       </Section>
 
-      <Section>
+      <Section className="mt-8">
         <Container>
            <Flex className="justify-between">
              <div className='w-6/12'>
+              <ul className='mb-20 mt-10 flex gap-x-8'>
+                <li onClick={handleReviews} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Reviews (200)</li>
+                <li onClick={handleDisciption} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Description</li>
+                <li onClick={handleDissicun} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Discussion</li>
+                <li onClick={handleGift} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Gift Cards</li>
+              </ul>
+            
+            {
+              review &&
+              <div>
                <Review url={ReviewImg} name="Vanille" time="1 Month Ago"/>
+               <Review url={ReviewImg} name="Samantha" time="2 Month Ago"/>
+               <Review url={ReviewImg} name="Maduin" time="3 Month Ago"/>
+               <Review url={ReviewImg} name="Samantha" time="2 Month Ago"/>
+              </div>
+            }
+
+            {
+              discription &&
+              <div>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+              </div>
+            }
+            {
+              dissicun &&
+              <div>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+              </div>
+            }
+            {
+              gift &&
+              <div>
+                <div className='w-96 mx-auto'>
+                  <Image src={Gift}/>
+
+                </div>
+                <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, illum, impedit deleniti ullam asperiores nostrum aliquam distinctio soluta sequi adipisci alias magni maiores vero natus? Modi dolores ipsa tenetur et! Accusamus cum ipsum odit molestias natus atque! Necessitatibus excepturi in, repudiandae, libero quaerat eius non molestias ipsum delectus cum laborum? </p>
+              </div>
+            }
+              
+
              </div>
              <div className='w-5/12'></div>
            </Flex>

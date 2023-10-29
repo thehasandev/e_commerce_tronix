@@ -6,6 +6,7 @@ import {AiFillStar} from "react-icons/ai"
 
 function Review({name,url,time}) {
   return (
+    <div className='mb-8'>
     <Flex className="gap-x-2">
         <div>
           <Image src={url}/>
@@ -23,9 +24,11 @@ function Review({name,url,time}) {
                 </Flex>
                 <p className='font-pop font-medium text-base text-gray'>{time}</p>
             </Flex>
-            <p className='font-pop font-normal text-small text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </div>
+        
     </Flex>
+    <p className='font-pop mt-6 font-normal text-small text-secondary'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    </div>
   )
 }
 
