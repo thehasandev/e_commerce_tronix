@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Section from './Section'
 import Flex from './Flex'
 import {BsInstagram,BsFillTelephoneFill} from "react-icons/bs"
@@ -14,10 +14,10 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { move } from '../slices/bradcumb'
 import SubHeading from "../components/SubHeading"
-import ProdutcImg from "../assets/product.png"
 import { increment,decrement,removeCart } from '../slices/cartSlice'
 
 function Navbar() {
+  let [tottalPrice,setTottalPrice] =useState(0)
   let dispatch = useDispatch()
 
   let handleSubmit =(data)=>{
@@ -36,6 +36,13 @@ function Navbar() {
     dispatch(removeCart(item))
 
     }
+  useEffect(()=>{
+    let tottal = 0
+    cartdata.map((item)=>{
+      tottal+=item.price*item.quantity
+    })
+    setTottalPrice(tottal)
+  },[cartdata])  
   return (
     <>
         <Section className="mb-8">
@@ -172,7 +179,7 @@ function Navbar() {
                               <button className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Cheak Out</button>
 
                             </div>
-                              <h3 className='font-pop font-bold text-right text-xl text-secondary mr-16 mt-5 '>Tottal: 1000</h3>
+                              <h3 className='font-pop font-bold text-right text-xl text-secondary mr-16 mt-5 '>Tottal: {tottalPrice}</h3>
 
         
                          </>
