@@ -20,13 +20,14 @@ import { addtocart } from '../slices/cartSlice'
 import Slider from 'react-slick'
 import NextArrow from '../components/NextArrow'
 import PreviousArrow from '../components/PreviousArrow'
+import {AiOutlineRight} from "react-icons/ai"
 function ProductDeteals() {
   let location  = useLocation()
   let {url,name,price,discount} = location.state
   let cartData =useSelector((state)=>state.cart.cartItem)
   let dispatch = useDispatch()
 
-   
+   let pageData =useSelector((state)=>state.brade.currentPage)
   let [review,setReview] = useState(true)
   let [discription,setDiscriptin] = useState(false)
   let [dissicun,setDissicun] = useState(false)
@@ -86,8 +87,6 @@ function ProductDeteals() {
                <div className='w-5/12 '>
                   <Image  className="w-96 mx-auto" src={url}/> 
                
-                
-                  {/* Slide  */}
                   <div className='w-[230px] mx-auto mt-8'>
                     <Slider {...settings}>
                         <Image src={url} className="w-16"/>
@@ -104,6 +103,15 @@ function ProductDeteals() {
                </div>
 
                <div className='w-6/12'>
+                  <Section className="mb-5">
+                    <Container>
+                        <Flex className="items-center">
+                            <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{pageData}</p>
+                            <AiOutlineRight className='text-gray'/>
+                            <p className='capitalize font-pop font-normal text-small text-primary ml-2'>{name}</p>
+                        </Flex>
+                    </Container>
+                  </Section>
                    <Flex>
                      <Flex className='w-8/12 items-center gap-x-4'>
                       <p className='font-pop font-normal text-secondary text-small'>5.5</p>
