@@ -1,6 +1,6 @@
 let flash =[
     {
-        url : "/images/flash.png",
+        url : "/images/f1.png",
         name : "Wireless Headphone",
         price : 19,
         discount:19.99,
@@ -9,7 +9,7 @@ let flash =[
         soldValue:5
     },
     {
-        url : "/images/flash.png",
+        url : "/images/f2.png",
         name : "Air Purifier",
         price : 30,
         discount:39.99,
@@ -18,7 +18,7 @@ let flash =[
         soldValue:15
     },
     {
-        url : "/images/flash.png",
+        url : "/images/f3.png",
         name : "Bluetooth Printer",
         price : 22,
         discount:22.99,
@@ -27,7 +27,7 @@ let flash =[
         soldValue:9
     },
     {
-        url : "/images/flash.png",
+        url : "/images/f4.png",
         name : "Wireless Headphone",
         price : 19,
         discount:19.99,
@@ -36,7 +36,7 @@ let flash =[
         soldValue:5
     },
     {
-        url : "/images/flash.png",
+        url : "/images/f5.png",
         name : "Air Purifier",
         price : 30,
         discount:39.99,
@@ -45,7 +45,7 @@ let flash =[
         soldValue:15
     },
     {
-        url : "/images/flash.png",
+        url : "/images/f8.png",
         name : "Bluetooth Printer",
         price : 22,
         discount:22.99,

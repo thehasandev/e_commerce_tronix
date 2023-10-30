@@ -5,7 +5,8 @@ import Flex from './Flex'
 function Flashsale({src,alt,name,price,avilabelValue,soldValue,badge,discount}) {
   return (
     <div className='w-w512 rounded-xl  border border-gray relative'>
-        <Image src={src} alt={alt} className="rounded-t-xl"/>
+        <Image src={src} alt={alt} className="rounded-t-xl w-full h-96" />
+        <div className='h-96 w-full bg-black/20 top-0 left-0 absolute'></div>
         <div className='w-32 bg-[#BB6BD9] rounded-[8px] absolute top-8 right-8'>
             <p className='font-pop font-medium text-small text-white px-6 py-2.5 '>{badge}% OFF</p>
         </div>

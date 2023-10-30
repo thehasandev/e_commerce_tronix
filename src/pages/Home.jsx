@@ -38,7 +38,6 @@ function Home() {
     let [flashView,setFlashView] = useState(false)
     let [featureView,setFeatureView] = useState(false)
     let [productView,setProductView] = useState(false)
-    
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -114,14 +113,24 @@ function Home() {
         <Flex className="justify-between flex-wrap gap-y-8">
             {
             arrivalView ? 
-                arrivalData.map((item,index)=>(
-                    <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
-                ))
+                arrivalData.map((item,index)=>{
+                    let {url,name,price,discount,badge} = item
+                    return<Link to={name} state={{url,name,price,discount}}>
+                             <Arrival key={index} src={url} name={name} price={price} badge={badge}/>
+                           </Link>
+                }
+                )
                 :
-                arrivalData.map((item,index)=>(
-                index<3 &&
-                    <Arrival key={index} src={item.url} name={item.name} price={item.price} badge={item.badge}/>
-                ))
+                arrivalData.map((item,index)=>{
+                    let {url,name,price,discount,badge} = item
+                    if(index<3){    
+                        return<Link to={name} state={{url,name,price,discount}}>
+                          <Arrival key={index} src={url} name={name} price={price} badge={badge}/>
+                        </Link>
+                    }
+
+                }
+                )
             }  
         </Flex>
         </Container>
@@ -137,11 +146,16 @@ function Home() {
         
         <Slider {...flashSlide}>
             {
-                flashData.map((item,index)=>(
-                 <div key={index}>
-                     <Flashsale key={index} src={item.url} name={item.name} price={item.price} badge={item.badge} discount={item.discount} avilabelValue={item.avilabelVale} soldValue={item.soldValue}/>
-                 </div>
-                ))
+                flashData.map((item,index)=>{
+            let {url,name,price,discount,avilabelVale,soldValue,badge} = item
+             return<Link key={index} to={name} state={{url,name,price,discount}} >
+                <div key={index}>
+                        <Flashsale key={index} src={url} name={name} price={price} badge={badge} discount={discount} avilabelValue={avilabelVale} soldValue={soldValue}/>
+                </div>
+             </Link>
+
+                }
+                )
             }
         </Slider>
       
