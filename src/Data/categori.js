@@ -1,30 +1,30 @@
 let categori =[
     {
-        url : "/images/cetagori1.png",
+        url : "/images/computer.jpg",
         name : "Computer & Laptop"
     },
     {
-        url : "/images/cetagori2.png",
+        url : "/images/mobile.png",
         name : " Mobile & Tablet"
     },
     {
-        url : "/images/cetagori3.png",
+        url : "/images/camera.jpg",
         name : "Camera"
     },
     {
-        url : "/images/cetagori4.png",
+        url : "/images/tv.png",
         name : "TV & Smart Box"
     },
     {
-        url : "/images/cetagori5.png",
+        url : "/images/condonar2.jpg",
         name : "Home  Appliance"
     },
     {
-        url : "/images/cetagori6.png",
+        url : "/images/fan.jpg",
         name : "Accessories"
     },
     {
-        url : "/images/cetagori7.png",
+        url : "/images/game.jpg",
         name : "Other  Categories "
     },
 ]

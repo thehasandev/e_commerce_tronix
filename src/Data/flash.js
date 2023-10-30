@@ -9,7 +9,7 @@ let flash =[
         soldValue:5
     },
     {
-        url : "/images/f2.png",
+        url : "/images/f11.jpg",
         name : "Air Purifier",
         price : 30,
         discount:39.99,
@@ -18,7 +18,7 @@ let flash =[
         soldValue:15
     },
     {
-        url : "/images/f3.png",
+        url : "/images/f2.png",
         name : "Bluetooth Printer",
         price : 22,
         discount:22.99,
