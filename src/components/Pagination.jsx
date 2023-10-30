@@ -623,7 +623,7 @@ const items = [
         sold  : 99  
     },
     {
-        name : "Product 14",
+        url : "/images/p12.png",
         name : "Smart TV HD",
         price : 5000,
         discount : 9000,
@@ -770,7 +770,7 @@ function Pagination({ itemsPerPage }) {
         pageRangeDisplayed={4}
         pageCount={pageCount}
         previousLabel=""
-        className='flex gap-x-8 mt-16'
+        className='flex gap-x-8 mt-16 cursor-pointer'
         pageClassName="bg-secondary px-4 py-2 text-white text-lg rounded-[2px]"
         renderOnZeroPageCount={null}
       />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineRight } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import Section from '../components/Section'
@@ -9,6 +9,7 @@ import Pagination from '../components/Pagination'
 
 function ProductPage() {
     let data = useSelector((state)=>state.brade.previousPage)
+    let [input,setInput] = useState("")
   return (
     <>
       <Section>
@@ -87,8 +88,24 @@ function ProductPage() {
                     </div>
 
                   <div className='w-10/12'>
-                    
-                          <Pagination itemsPerPage={9}/>
+                    <Flex className="justify-end">
+                      <label className='font-pop font-normal text-secondary text-small mr-5 '>Show : </label>
+                      <select value={input} className='w-32 border border-solid border-gray px-2 rounded-[2px] mb-8' onChange={(e)=>{setInput(e.target.value)}}>
+                        <option></option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>10</option>
+                        <option>12</option>
+                        <option>18</option>
+                        <option>20</option>
+                        <option>24</option>
+                      </select>
+                    </Flex>
+                      <Pagination itemsPerPage={input == 3 ? 3 : input==4 ? 4 : input == 5 ? 5: input ==6 ? 6 :input == 7? 7 :input == 8? 8  :input == 9? 9:input == 12? 12 :input == 18? 18 :input == 20? 20 :input == 24? 24  : 9}/>
                   
                   </div>
                 </Flex>
