@@ -31,13 +31,15 @@ import Add from "../assets/year.png"
 import PreviousArrow from "../components/PreviousArrow"
 import NextArrow from '../components/NextArrow'
 import { Link } from 'react-router-dom'
-
+import { useDispatch } from 'react-redux'
+import { move } from '../slices/bradcumb'
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
     let [flashView,setFlashView] = useState(false)
     let [featureView,setFeatureView] = useState(false)
     let [productView,setProductView] = useState(false)
+    let dispatch =useDispatch()
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -66,27 +68,31 @@ function Home() {
         prevArrow: <PreviousArrow class="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden"/>
       }; 
 
+      const handleSubmit =(data)=>{
+        dispatch(move(data))
+      }
+
   return (
     <>
     <Section>
-    <Container>
-        <Flex className="justify-between">
-            <div className='w-2/3'>
-            <Slider {...bannerSlide}>
-            <Image src={BannerSlide}/>
-            <Image src={BannerSlide}/>
-            <Image src={BannerSlide}/>
-            <Image src={BannerSlide}/>
-            <Image src={BannerSlide}/>
-            <Image src={BannerSlide}/>
-            </Slider>
-            </div>
-            <div className='1/3'>
-            <Image src={BannerOne} className="mb-8"/>
-            <Image src={BannerTwo}/>
-            </div>
-        </Flex>
-    </Container>
+        <Container>
+            <Flex className="justify-between">
+                <div className='w-2/3'>
+                <Slider {...bannerSlide}>
+                <Image src={BannerSlide}/>
+                <Image src={BannerSlide}/>
+                <Image src={BannerSlide}/>
+                <Image src={BannerSlide}/>
+                <Image src={BannerSlide}/>
+                <Image src={BannerSlide}/>
+                </Slider>
+                </div>
+                <div className='1/3'>
+                <Image src={BannerOne} className="mb-8"/>
+                <Image src={BannerTwo}/>
+                </div>
+            </Flex>
+        </Container>
     </Section>
 
     <Section className="my-40">
@@ -115,8 +121,8 @@ function Home() {
             arrivalView ? 
                 arrivalData.map((item,index)=>{
                     let {url,name,price,discount,badge} = item
-                    return<Link to={name} state={{url,name,price,discount}}>
-                             <Arrival key={index} src={url} name={name} price={price} badge={badge}/>
+                    return<Link key={index} onClick={()=>{handleSubmit("New Arrival")}} to={name} state={{url,name,price,discount}}>
+                             <Arrival  src={url} name={name} price={price} badge={badge}/>
                            </Link>
                 }
                 )
@@ -124,8 +130,8 @@ function Home() {
                 arrivalData.map((item,index)=>{
                     let {url,name,price,discount,badge} = item
                     if(index<3){    
-                        return<Link to={name} state={{url,name,price,discount}}>
-                          <Arrival key={index} src={url} name={name} price={price} badge={badge}/>
+                        return<Link key={index} onClick={()=>{handleSubmit("New Arrival")}} to={name} state={{url,name,price,discount}}>
+                          <Arrival  src={url} name={name} price={price} badge={badge}/>
                         </Link>
                     }
 
@@ -148,7 +154,7 @@ function Home() {
             {
                 flashData.map((item,index)=>{
             let {url,name,price,discount,avilabelVale,soldValue,badge} = item
-             return<Link key={index} to={name} state={{url,name,price,discount}} >
+             return<Link onClick={()=>{handleSubmit("Flash Sale")}} key={index} to={name} state={{url,name,price,discount}} >
                 <div key={index}>
                         <Flashsale key={index} src={url} name={name} price={price} badge={badge} discount={discount} avilabelValue={avilabelVale} soldValue={soldValue}/>
                 </div>
@@ -198,7 +204,7 @@ function Home() {
                 featureView ? 
                 featureData.map((item,index)=>{
                     let {url,name,price,discount,subdiscount,percent,badge} = item
-            return <Link key={index} to={name} state={{url,name,price,discount}} >
+            return <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
                       <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
                     </Link>
                 }
@@ -209,7 +215,7 @@ function Home() {
                 featureData.map((item,index)=>{
                  let {url,name,price,discount,subdiscount,percent,badge} = item
                    if(index < 3 ){
-            return  <Link key={index} to={name} state={{url,name,price,discount}} >
+            return  <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
                       <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
                     </Link>
                    }
@@ -236,7 +242,7 @@ function Home() {
                 productView ? 
                     productData.map((item,index)=>{
                         let {url,name,price,sold,discount} = item
-                return<Link key={index} to={name} state={{url,name,price,sold,discount}} >
+                return<Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
                         <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
                       </Link>  
 
@@ -248,7 +254,7 @@ function Home() {
                 productData.map((item,index)=>{
                     let {url,name,price,sold,discount} = item
                      if(index < 4 ){        
-            return  <Link key={index} to={name} state={{url,name,price,sold,discount}}>
+            return  <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}}>
                       <Product key={index} src={url} name={name} price={price} sold={sold} />  
                     </Link>
                      }
