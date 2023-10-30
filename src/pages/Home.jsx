@@ -27,7 +27,7 @@ import S3 from "../assets/s3.png"
 import S4 from "../assets/s4.png"
 import S5 from "../assets/s5.png"
 import S6 from "../assets/s6.png"
-import Add from "../assets/add.png"
+import Add from "../assets/year.png"
 import PreviousArrow from "../components/PreviousArrow"
 import NextArrow from '../components/NextArrow'
 import { Link } from 'react-router-dom'
