@@ -9,11 +9,20 @@ import Input  from '../components/Input'
 import { Link } from 'react-router-dom'
 import { move } from '../slices/bradcumb'
 function Checkout() {
+    let data =useSelector((state)=>state.cart.cartItem)
     let datas = useSelector((state)=>state.brade.currentPage)
     let dispatch =useDispatch()
     let hadnedleSubmit =(data)=>{
        dispatch(move(data))
     }
+let [tottal,setTottal] =useState(0)
+    useEffect(()=>{
+      let total = 0
+      data.map((item)=>{
+         total += item.price*item.quantity
+      },[data])
+      setTottal(total);
+    })
   return (
     <>
     <Section className="mb-8">
@@ -92,29 +101,34 @@ function Checkout() {
                      <div className='border border-solid border-secondary rounded-lg p-8'>
                         <h3 className='font-pop font-semibold text-center mb-8  text-2xl text-secondary'>Your Order Summary</h3>
                          <div className='border-b border-gray pb-5 mb-5'>
-                          <ul className='flex justify-between mb-6 '>
-                              <li className='font-pop font-medium  text-xl text-secondary'>1x</li>
-                              <li className='font-pop font-medium  text-xl text-secondary'>USB Speaker Portable</li>
-                              <li className='font-pop font-medium  text-xl text-secondary'>$100.00</li>
-                          </ul> 
+                          {
+                            data.map((item,index)=>{
+                          return<ul key={index} className='flex justify-between  mb-5 px-4'>
+                                  <li className='font-pop font-medium w-2  text-xl text-secondary'>1x</li>
+                                  <li className='font-pop font-medium w-[280px]  text-xl text-left text-secondary'>{item.name}</li>
+                                  <li className='font-pop font-medium w-4 text-xl text-secondary'>{`$${item.price*item.quantity}`}</li>
+                                </ul> 
+
+                            })
+                          }
                           {/* sdfsd */}
                         
                          </div>
                          <ul className='flex justify-between mb-6  border-gray '>
                             <li className='font-pop font-medium  text-xl text-secondary'>Subtotal</li>
-                            <li className='font-pop font-medium  text-xl text-secondary'>1000</li>
+                            <li className='font-pop font-medium  text-xl text-secondary'>{`$${tottal} :00`}</li>
                         </ul> 
                          <ul className='flex justify-between mb-6   '>
                             <li className='font-pop font-medium  text-xl text-secondary'>Shipping</li>
-                            <li className='font-pop font-medium  text-xl text-secondary'>15:00</li>
+                            <li className='font-pop font-medium  text-xl text-secondary'>$15:00</li>
                         </ul> 
                          <ul className='flex justify-between mb-6   border-b border-gray pb-5'>
                             <li className='font-pop font-medium  text-xl text-secondary'>Tax</li>
-                            <li className='font-pop font-medium  text-xl text-secondary'>10</li>
+                            <li className='font-pop font-medium  text-xl text-secondary'>$10:00</li>
                         </ul> 
                          <ul className='flex justify-between mb-6   border-b border-gray pb-5'>
                             <li className='font-pop font-medium  text-xl text-secondary'>Tottal</li>
-                            <li className='font-pop font-medium  text-xl text-secondary'>10</li>
+                            <li className='font-pop font-medium  text-xl text-secondary'>{`$${tottal+10+15}`}</li>
                         </ul> 
                         <h3 className='font-pop font-semibold text-center mb-8  text-2xl text-secondary'>Payment</h3>
                         <Flex className="justify-center gap-x-4">

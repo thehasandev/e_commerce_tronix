@@ -75,7 +75,7 @@ let handleSubmit =(data)=>{
                          <div className='w-7/12'>
                             {
                                 data.map((item,index)=>(
-                                    <div className='w-full mb-8'>
+                                    <div key={index} className='w-full mb-8'>
                                             <Flex className='w-full gap-x-14 border-b border-solid border-primary pb-8 items-center'>  
                                              
                                             <div className='w-96'>
