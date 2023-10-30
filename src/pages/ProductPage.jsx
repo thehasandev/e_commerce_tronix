@@ -5,8 +5,6 @@ import Section from '../components/Section'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import List from "../components/List"
-import Product from "../components/Product"
-import P1 from "../assets/product.png"
 import Pagination from '../components/Pagination'
 
 function ProductPage() {

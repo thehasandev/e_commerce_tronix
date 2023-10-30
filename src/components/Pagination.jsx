@@ -700,6 +700,27 @@ const items = [
         discount : 3000,
         sold  : 88  
     },
+    {
+        url : "/images/p10.png",
+        name : "Product 48",
+        price : 200,
+        discount : 330,
+        sold  : 88  
+    },
+    {
+        url : "/images/p11.png",
+        name : "Product 49",
+        price : 1000,
+        discount : 1100,
+        sold  : 88  
+    },
+    {
+        url : "/images/p12.png",
+        name : "Product 50",
+        price : 2000,
+        discount : 3000,
+        sold  : 88  
+    },
 ];
 
 function Items({ currentItems }) {
@@ -709,6 +730,7 @@ function Items({ currentItems }) {
         currentItems.map((item,index) => (
           <div key={index}>
               <Product src={item.url} name={item.name} price={item.price} sold={item.sold}/>
+              
           </div>
         ))}
     </Flex>
@@ -740,15 +762,21 @@ function Pagination({ itemsPerPage }) {
   return (
     <>
       <Items currentItems={currentItems} />
+      <Flex className="items-end justify-between">
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel=""
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={4}
         pageCount={pageCount}
-        previousLabel="< previous"
+        previousLabel=""
+        className='flex gap-x-8 mt-16'
+        pageClassName="bg-secondary px-4 py-2 text-white text-lg rounded-[2px]"
         renderOnZeroPageCount={null}
       />
+     
+        <p className='font-pop font-normal text-lg text-secondary'>Products from {itemOffset+1} to {endOffset} of {items.length}</p>
+      </Flex>
     </>
   );
 }
