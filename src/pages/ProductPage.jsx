@@ -5,7 +5,9 @@ import Section from '../components/Section'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
 import List from "../components/List"
-import SubHeading from "../components/SubHeading"
+import Product from "../components/Product"
+import P1 from "../assets/product.png"
+import Pagination from '../components/Pagination'
 
 function ProductPage() {
     let data = useSelector((state)=>state.brade.previousPage)
@@ -23,13 +25,13 @@ function ProductPage() {
 
       <Section className="mt-124">
         <Container>
-          <h2 className='font-dm font-bold text-text49 text-primary'>Product</h2>
+          <h2 className='font-dm font-bold text-4xl text-secondary mt-8'>Product</h2>
             
             <Section>
               <Container>
                   <Flex className="mt-14">
                     <div className='w-2/12'>
-                    <h3 className='font-mon font-bold text-xl text-secondary mt-14'>Shop by Category</h3>
+                       <h3 className='font-mon font-bold text-xl text-secondary mt-14'>Shop by Category</h3>
                      
                         <ul>
                           <List text="Category 1" side className="mt-10"/>
@@ -87,7 +89,9 @@ function ProductPage() {
                     </div>
 
                   <div className='w-10/12'>
-                    
+                    <Flex className="justify-between flex-wrap gap-y-10">
+                          <Pagination itemsPerPage={9}/>
+                    </Flex>
                   </div>
                 </Flex>
             </Container>
