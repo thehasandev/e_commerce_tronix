@@ -4,12 +4,15 @@ import Container from '../components/Container'
 import {AiOutlineClose,AiOutlineRight} from "react-icons/ai"
 import { useDispatch, useSelector } from 'react-redux'
 import { increment,decrement,removeCart } from '../slices/cartSlice'
+import { move } from '../slices/bradcumb'
 import Flex from '../components/Flex'
 import Image from "../components/Image"
 import Voucer from "../assets/voucer.png"
+import SubHeading from "../components/SubHeading"
+import { Link } from 'react-router-dom'
 
 function Cart() {
-    let datas = useSelector((state)=>state.brade.previousPage)
+    let datas = useSelector((state)=>state.brade.currentPage)
     let [total,setTotal] =useState(0)
     let data = useSelector((state)=>state.cart.cartItem)
     let dispatch = useDispatch()
@@ -31,7 +34,9 @@ function Cart() {
         setTotal(tottal)
      },[data])
 
-
+let handleSubmit =(data)=>{
+  dispatch(move(data))
+}
 
   return (
     <>
@@ -41,6 +46,23 @@ function Cart() {
                     <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{datas}</p>
                     <AiOutlineRight className='text-gray'/>
                     <p className='capitalize font-pop font-normal text-small text-primary ml-2'>{(window.location.pathname.replace("/",""))}</p>
+                </Flex>
+                <SubHeading text="My Cart" className="text-center"/>
+                <Flex className="justify-center gap-x-96 mb-12 mt-8">
+                        <Flex className="gap-x-4 relative after:absolute after:h-1 after:w-[280px] after:top-1/2 after:-translate-y-1/2 after:right-[-340px] after:rounded-lg after:bg-secondary">
+                            <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
+                                1
+                            </p>
+                            <p className='font-pop font-normal text-small text-primary '>My Cart</p>
+                        </Flex>
+
+                        <Flex className="gap-x-4">
+                            <p className='w-8 h-8 border border-solid border-gray rounded-full text-small font-pop font-normal text-gray flex items-center justify-center'>
+                                1
+                            </p>
+                            <p className='font-pop font-normal text-small text-gray '>Checkout</p>
+                        </Flex>
+
                 </Flex>
             </Container>
         </Section>
@@ -97,7 +119,12 @@ function Cart() {
                                 <p className='font-pop font-medium text-small text-gray'>Total</p>
                                 <p className='font-pop font-medium text-small text-primary'>${total}.00</p>
                             </Flex>
-                        <button className='w-full block rounded-lg  py-4 bg-primary font-pop text-lg text-white font-medium'>Checkout</button>
+                      
+                            <Link to="/check-out">
+                            <button onClick={()=>{handleSubmit("Cart")}} className='w-full block rounded-lg  py-4 bg-primary font-pop text-lg text-white font-medium'>
+                                Checkout
+                            </button>
+                            </Link>
                         <p className='font-pop font-medium text-small text-primary mt-8 text-center'>Continue Shopping</p>
                     </div>
                 </div>

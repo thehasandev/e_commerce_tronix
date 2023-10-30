@@ -11,6 +11,7 @@ import Contact from '../components/Contact';
 import ContactPage from '../pages/ContactPage';
 import Cart from '../pages/Cart';
 import ProductDeteals from '../pages/ProductDeteals';
+import Checkout from '../pages/Checkout';
 
 
 
@@ -46,6 +47,10 @@ const route = createBrowserRouter([
         {
           path: "/product-deteals",
           element: <ProductDeteals />,
+        },
+        {
+          path: "/check-out",
+          element: <Checkout />,
         },
         {
           path: "*",

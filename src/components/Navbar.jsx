@@ -176,9 +176,9 @@ function Navbar() {
                             }
                             <div className='mt-8 flex justify-center gap-x-5'>
                               <Link to="/cart">
-                                <button className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Veiw Cart</button>
+                                <button onClick={()=>{setOpen(false)}} className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Veiw Cart</button>
                               </Link>
-                              <button className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Cheak Out</button>
+                              
 
                             </div>
                               <h3 className='font-pop font-bold text-right text-xl text-secondary mr-16 mt-5 '>Tottal: {tottalPrice}</h3>
