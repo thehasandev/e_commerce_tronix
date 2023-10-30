@@ -196,15 +196,25 @@ function Home() {
             <div className='w-full flex flex-wrap gap-10 justify-center'>
                 {
                 featureView ? 
-                featureData.map((item,index)=>(
+                featureData.map((item,index)=>{
+                    let {url,name,price,discount,subdiscount,percent,badge} = item
+            return <Link key={index} to={name} state={{url,name,price,discount}} >
+                      <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
+                    </Link>
+                }
                 
-                    <Feature key={index} src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
-                ))
+                
+                )
                 :
-                featureData.map((item,index)=>(
-                    index < 3 &&
-                    <Feature key={index} src={item.url} name={item.name} price={item.price} subdiscount={item.subdiscount} percent={item.percent} badge={item.badge}/>
-                ))
+                featureData.map((item,index)=>{
+                 let {url,name,price,discount,subdiscount,percent,badge} = item
+                   if(index < 3 ){
+            return  <Link key={index} to={name} state={{url,name,price,discount}} >
+                      <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
+                    </Link>
+                   }
+                }
+                )
                 }
                 
             </div>
