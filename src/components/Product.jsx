@@ -5,7 +5,7 @@ import Flex from './Flex'
 import { useDispatch } from 'react-redux'
 import { addtocart } from '../slices/cartSlice'
 
-function Product({src,alt,name,price,sold,click}) {
+function Product({src,alt,name,price,sold}) {
   let dispatch = useDispatch()
 
 

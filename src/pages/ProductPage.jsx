@@ -89,9 +89,9 @@ function ProductPage() {
                     </div>
 
                   <div className='w-10/12'>
-                    <Flex className="justify-between flex-wrap gap-y-10">
+                    
                           <Pagination itemsPerPage={9}/>
-                    </Flex>
+                  
                   </div>
                 </Flex>
             </Container>
