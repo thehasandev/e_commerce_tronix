@@ -5,7 +5,7 @@ import Flex from './Flex'
 import { useDispatch } from 'react-redux'
 import { addtocart } from '../slices/cartSlice'
 
-function Product({src,alt,name,price,sold}) {
+function Product({src,alt,name,price,sold,click}) {
   let dispatch = useDispatch()
 
 
@@ -19,10 +19,13 @@ function Product({src,alt,name,price,sold}) {
         quantity:1
       }))
 
+    
    }
   return (
     <div className='w-w376 border border-gray p-8 rounded-xl'>
+      
          <Image src={src} alt={alt}/>
+      
         
       <Flex className=' flex-col items-center justify-center'>
             <h3 className='font-pop font-normal text-2xl text-secondary mt-8 mb-2'>{name}</h3>

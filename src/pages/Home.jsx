@@ -30,6 +30,7 @@ import S6 from "../assets/s6.png"
 import Add from "../assets/add.png"
 import PreviousArrow from "../components/PreviousArrow"
 import NextArrow from '../components/NextArrow'
+import { Link } from 'react-router-dom'
 
 
 function Home() {
@@ -37,6 +38,7 @@ function Home() {
     let [flashView,setFlashView] = useState(false)
     let [featureView,setFeatureView] = useState(false)
     let [productView,setProductView] = useState(false)
+    
     const bannerSlide = {
         dots: true,
         infinite: true,
@@ -208,15 +210,27 @@ function Home() {
         <Flex className="flex-wrap gap-6">
             {
                 productView ? 
-                    productData.map((item,index)=>(
+                    productData.map((item,index)=>{
+                        let {url,name,price,sold,discount} = item
+                return<Link key={index} to={name} state={{url,name,price,sold,discount}} >
                         <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
-                    ))
+                      </Link>  
+
+                    }
+
+                    )
                 :
              
-                productData.map((item,index)=>(
-                    index < 4 &&
-                    <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
-                ))
+                productData.map((item,index)=>{
+                    let {url,name,price,sold,discount} = item
+                     if(index < 4 ){        
+            return  <Link key={index} to={name} state={{url,name,price,sold,discount}}>
+                      <Product key={index} src={url} name={name} price={price} sold={sold} />  
+                    </Link>
+                     }
+
+                }
+                )
 
 
             }

@@ -7,7 +7,7 @@ export const cartSlice = createSlice({
   },
   reducers: {
     addtocart: (state,action) => {
-       if(state.cartItem.length>1){
+       if(state.cartItem.length>0){
           let arr =[]
           state.cartItem.map((item)=>{
             if(item.name == action.payload.name){

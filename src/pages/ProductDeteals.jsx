@@ -14,11 +14,24 @@ import ReviewImg from "../assets/review.png"
 import Gift from "../assets/gift.jpg"
 import { useState } from 'react'
 import Input from '../components/Input'
+import { Link, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { addtocart } from '../slices/cartSlice'
+import Slider from 'react-slick'
+import NextArrow from '../components/NextArrow'
+import PreviousArrow from '../components/PreviousArrow'
 function ProductDeteals() {
+  let location  = useLocation()
+  let {url,name,price,discount} = location.state
+  let cartData =useSelector((state)=>state.cart.cartItem)
+  let dispatch = useDispatch()
+
+   
   let [review,setReview] = useState(true)
   let [discription,setDiscriptin] = useState(false)
   let [dissicun,setDissicun] = useState(false)
   let [gift,setGift] = useState(false)
+  
 
      let handleReviews =()=>{
        setReview(true)
@@ -44,18 +57,50 @@ function ProductDeteals() {
       setDiscriptin(false)
       setReview(false)
      }
+     let handleSubmit = ()=>{
+      dispatch(addtocart(
+        {
+          name : name,
+          url :url,
+          price:price,
+          quantity:1
+         }
+      ))
+       
+     }
+
+     const settings = {
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      nextArrow: <NextArrow class="absolute top-1/2 -translate-y-1/2 -right-4"/>,
+      prevArrow: <PreviousArrow class="absolute top-1/2 -translate-y-1/2 -left-4 z-10 "/>
+    }; 
+
   return (
     <>
       <Section>
         <Container>
             <Flex className="justify-between">
-               <div className='w-5/12'>
-                <Image src={ProductDetail}/> 
-                 <Flex className="justify-center gap-x-8 mt-8">
-                   <Image src={ProductDetails}/>
-                   <Image src={ProductDetails}/>
-                   <Image src={ProductDetails}/>
-                 </Flex>
+               <div className='w-5/12 '>
+                  <Image  className="w-96 mx-auto" src={url}/> 
+               
+                
+                  {/* Slide  */}
+                  <div className='w-[230px] mx-auto mt-8'>
+                    <Slider {...settings}>
+                        <Image src={url} className="w-16"/>
+                        <Image src={url} className="w-16"/>
+                        <Image src={url} className="w-16"/>
+                        <Image src={url} className="w-16"/>
+                      
+            
+                    </Slider>
+
+                  </div>
+                  
+               
                </div>
 
                <div className='w-6/12'>
@@ -78,11 +123,11 @@ function ProductDeteals() {
                      </Flex>
                    </Flex>
 
-                   <h3 className='font-pop font-normal text-secondary text-4xl mt-2 mb-4'>Wireless Microphone</h3>
+                   <h3 className='font-pop font-normal text-secondary text-4xl mt-2 mb-4'>{`${name}`}</h3>
                    
                    <Flex className="items-center gap-x-8">
-                    <h3 className='font-pop font-bold text-secondary text-4xl'>$29.00</h3>
-                    <p className='font-pop font-normal text-gray text-small line-through'>$99.00</p>
+                    <h3 className='font-pop font-bold text-secondary text-4xl'>{`${price}`}</h3>
+                    <p className='font-pop font-normal text-gray text-small line-through'>{`${discount}`}</p>
                     <button className='font-pop font-normal hover:bg-primary hover:text-white duration-300 text-primary border border-solid border-primary px-4 py-2 rounded-lg'>Save 50%</button>
                    </Flex>
 
@@ -105,17 +150,22 @@ function ProductDeteals() {
                   <p className='font-pop font-normal text-small text-gray w-[680px]'>Wireless Microphone with the new style, shockproof, clear voice reception that suitable for recording, online meeting, vlogging, and calling. Free casing with high-quality zipper.</p> 
                  
                   <Flex className="gap-x-16 mt-20">
-                     <Flex className="gap-x-8 items-center ">
-                      <p className='font-pop font-medium text-small text-gray'>Quantity</p>
-                       <button className='px-7 py-4 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
-                       <p className='font-pop font-bold text-2xl text-primary'>1</p>
-                       <button className='px-7 py-4 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-300'>+</button>
-  
-                     </Flex>
-                      
+                 
+                        {/* <Flex className="gap-x-8 items-center ">
+                         <p className='font-pop font-medium text-small text-gray'>Quantity</p>
+                          <button  className='px-7 py-4 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
+                            <p>1</p>
+                          <button  className='px-7 py-4 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-300'>+</button>
+     
+                        </Flex> */}
+                    
+
+                    
                       <div>
-                       <button className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
-                       <button className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
+                        <Link to="/cart">
+                          <button className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
+                        </Link>
+                       <button onClick={()=>{handleSubmit()}} className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
                       </div>
                   </Flex>
                </div>

@@ -103,10 +103,10 @@ let [tottal,setTottal] =useState(0)
                          <div className='border-b border-gray pb-5 mb-5'>
                           {
                             data.map((item,index)=>{
-                          return<ul key={index} className='flex justify-between  mb-5 px-4'>
+                          return<ul key={index} className='flex justify-between  mb-5 '>
                                   <li className='font-pop font-medium w-2  text-xl text-secondary'>1x</li>
-                                  <li className='font-pop font-medium w-[280px]  text-xl text-left text-secondary'>{item.name}</li>
-                                  <li className='font-pop font-medium w-4 text-xl text-secondary'>{`$${item.price*item.quantity}`}</li>
+                                  <li className='font-pop font-medium w-[280px]  text-xl text-left text-secondary '>{item.name}</li>
+                                  <li className='font-pop font-medium w-4 text-xl text-secondary pr-12'>{`$${item.price*item.quantity}`}</li>
                                 </ul> 
 
                             })

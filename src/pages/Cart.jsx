@@ -125,7 +125,9 @@ let handleSubmit =(data)=>{
                                 Checkout
                             </button>
                             </Link>
-                        <p className='font-pop font-medium text-small text-primary mt-8 text-center'>Continue Shopping</p>
+                            <Link onClick={()=>{handleSubmit("Home")}} to="/">
+                              <p className='font-pop font-medium text-small text-primary mt-8 text-center'>Continue Shopping</p>
+                            </Link>
                     </div>
                 </div>
 
