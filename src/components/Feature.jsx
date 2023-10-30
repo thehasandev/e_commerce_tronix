@@ -22,7 +22,7 @@ function Feature({src,alt,name,price,badge,subdiscount,percent}) {
     }
   return (
     <div className='w-w376 border border-gray rounded-[8px] relative'>
-        <Image src={src} alt={alt} className="w-full"/>
+        <Image src={src} alt={alt} className="w-full h-[400px]"/>
 
         <div className='w-16 bg-[#2D9CDB] text-center py-2 uppercase rounded-[8px] absolute top-8 right-8'>
             <p className='font-pop font-medium text-small  text-white'>{badge}</p>
