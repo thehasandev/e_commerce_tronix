@@ -8,7 +8,7 @@ let categori =[
         name : " Mobile & Tablet"
     },
     {
-        url : "/images/camera.jpg",
+        url : "/images/camera.png",
         name : "Camera"
     },
     {
@@ -16,7 +16,7 @@ let categori =[
         name : "TV & Smart Box"
     },
     {
-        url : "/images/condonar2.jpg",
+        url : "/images/lg2.png",
         name : "Home  Appliance"
     },
     {
