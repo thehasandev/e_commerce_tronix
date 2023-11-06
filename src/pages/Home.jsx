@@ -243,8 +243,8 @@ function Home() {
    <Section className="my-16 xl:my-40">
      <Container>
             
-         <Flex >
-            <div className='w-w376'>
+         <Flex className="flex-col xl xl:flex-row">
+            <div className='w-w376 hidden 2xl:block'>
                 <div className='w-full bg-primary text-white pt-12 pb-[360px] px-12 rounded-lg'>
                     <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
                     <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
@@ -253,9 +253,9 @@ function Home() {
             </div>
             
            <div className='w-full'>
-                <Flex className="justify-between items-center">
-                    <SubHeading text="Featured Products" className="mb-8 px-10"/>
-                    <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFeatureView(!featureView)}}>View All</p>
+                <Flex className="justify-between  items-center mt-8 xl:mt-0 mb-8 px-4 xl:px-0">
+                    <SubHeading text="Featured Products" className=" xl:px-10"/>
+                    <p className='font-pop font-normal text-primary xl:text-2xl cursor-pointer' onClick={()=>{setFeatureView(!featureView)}}>View All</p>
                 </Flex>
             <div className='w-full flex flex-wrap gap-10 justify-center'>
                 {
