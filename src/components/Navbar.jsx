@@ -24,6 +24,7 @@ function Navbar() {
 
   let handleSubmit =(data)=>{
     dispatch(move(data))
+    setDrop(false)
   }
   let [open,setOpen] =useState(false)
   let cartdata =useSelector((state)=>state.cart.cartItem)
