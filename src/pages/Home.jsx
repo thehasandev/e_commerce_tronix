@@ -19,6 +19,8 @@ import Feature from "../components/Feature"
 import Product from "../components/Product"
 
 import BannerSlide from "../assets/bannerSlide.png"
+import Banner2 from "../assets/banner2.png"
+import Banner3 from "../assets/banner3.png"
 import BannerOne from "../assets/bannerOne.png"
 import BannerTwo from "../assets/bannerTwo.png"
 import S1 from "../assets/s1.png"
@@ -79,7 +81,8 @@ function Home() {
             <Flex className="justify-between">
                 <div className='w-2/3'>
                 <Slider {...bannerSlide}>
-                <Image src={BannerSlide}/>
+                <Image src={Banner3}/>
+                <Image src={Banner2}/>
                 <Image src={BannerSlide}/>
                 <Image src={BannerSlide}/>
                 <Image src={BannerSlide}/>
