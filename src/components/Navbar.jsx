@@ -18,7 +18,7 @@ import SubHeading from "../components/SubHeading"
 import { increment,decrement,removeCart } from '../slices/cartSlice'
 
 function Navbar() {
-  
+  let [drop,setDrop] = useState (false)
   let [tottalPrice,setTottalPrice] =useState(0)
   let dispatch = useDispatch()
 
@@ -119,43 +119,46 @@ function Navbar() {
                   <Flex className='md:w-1/12 gap-x-2 md:gap-x-8  justify-end relative'>
                         <BiSolidCart size={25} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
                         <MdEmail size={25} className='text-secondary'/>
-                        <CgMenuRightAlt size={25} className='text-secondary md:hidden block cursor-pointer'/>
+                        <CgMenuRightAlt onClick={()=>{setDrop(!drop)}} size={25} className='text-secondary md:hidden block cursor-pointer'/>
                   
                   
                   <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
                   </Flex>
                        {/* Drop Down Menu  */}
-                       <ul className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
-                          <Link to="/">
-                            <div onClick={()=>{handleSubmit("Home")}}>
-                              <List   text="Home" className="pb-2 border-b border-solid border-black/20"/>
-                            </div>
-                          </Link>
+                       {
+                        drop &&
+                        <ul className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
+                            <Link to="/">
+                              <div onClick={()=>{handleSubmit("Home")}}>
+                                <List   text="Home" className="pb-2 border-b border-solid border-black/20"/>
+                              </div>
+                            </Link>
 
-                          <Link to="/about">
-                            <div onClick={()=>{handleSubmit("About")}}>
-                              <List  text="About" className="pb-2 border-b border-solid border-black/20"/>
-                            </div>
-                          </Link>
+                            <Link to="/about">
+                              <div onClick={()=>{handleSubmit("About")}}>
+                                <List  text="About" className="pb-2 border-b border-solid border-black/20"/>
+                              </div>
+                            </Link>
 
-                          <Link to="/product">
-                            <div onClick={()=>{handleSubmit("Product")}}>
-                              <List  text="Product" className="pb-2 border-b border-solid border-black/20"/>
-                            </div>
-                          </Link>
+                            <Link to="/product">
+                              <div onClick={()=>{handleSubmit("Product")}}>
+                                <List  text="Product" className="pb-2 border-b border-solid border-black/20"/>
+                              </div>
+                            </Link>
 
-                          <Link to="/blog">
-                            <div onClick={()=>{handleSubmit("Blog")}}>
-                              <List  text="Blog" className="pb-2 border-b border-solid border-black/20"/>
-                            </div>
-                          </Link>
+                            <Link to="/blog">
+                              <div onClick={()=>{handleSubmit("Blog")}}>
+                                <List  text="Blog" className="pb-2 border-b border-solid border-black/20"/>
+                              </div>
+                            </Link>
 
-                          <Link to="/contact">
-                            <div onClick={()=>{handleSubmit("Contact")}}>
-                              <List  text="Contact"/>
-                            </div>
-                          </Link>
-                       </ul>
+                            <Link to="/contact">
+                              <div onClick={()=>{handleSubmit("Contact")}}>
+                                <List  text="Contact"/>
+                              </div>
+                            </Link>
+                        </ul>
+                       }
                    
                    {/* add to cart sidebar  */}
                    {
