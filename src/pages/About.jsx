@@ -42,7 +42,7 @@ function About() {
 
      <Section className="mt-16 xl:mt-40">
         <Container>
-            <SubHeading text="Why Choosing Us" className="text-center xl:text-5xl mb-20"/>
+            <SubHeading text="Why Choosing Us" className="text-center xl:text-5xl mb-8 xl:mb-20"/>
             <Flex className="md:justify-between justify-center flex-wrap">
                 <Choosing src={ChooseOne} name="54 Brands" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
                 <Choosing src={ChooseTwo} name="Fast Delivery" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
@@ -52,9 +52,9 @@ function About() {
         </Container>
      </Section>
 
-     <Section className="mt-16 xl:mt-40">
+     <Section className="mt-16 xl:mt-40 px-2 xl:px-0">
         <Container>
-            <SubHeading text="Our Team" className="text-center xl:text-5xl mb-20"/>
+            <SubHeading text="Our Team" className="text-center xl:text-5xl mb-8 xl:mb-20"/>
             <Flex className="justify-center md:justify-between flex-wrap">
                <Team src={TeamOne} name="Sam Alabama" title="Team Member"/>
                <Team src={TeamOne} name="Ahmad Pucelle" title="Team Member"/>
