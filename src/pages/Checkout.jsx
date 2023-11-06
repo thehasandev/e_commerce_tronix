@@ -25,37 +25,41 @@ let [tottal,setTottal] =useState(0)
     })
   return (
     <>
-    <Section className="mb-8 pt-44">
+    <Section className="mb-8 pt-32 xl:pt-44">
     <Container>
         <Flex className="items-center">
-            <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{datas}</p>
+            <p className='capitalize font-pop font-normal text-small text-gray mr-2 px-4 xl:px-0'>{datas}</p>
             <AiOutlineRight className='text-gray'/>
             <p className='capitalize font-pop font-normal text-small text-primary ml-2'>{(window.location.pathname.replace("/",""))}</p>
         </Flex>
-        <SubHeading text="My Cart" className="text-center"/>
-        <Flex className="justify-center gap-x-96 mb-12 mt-8">
-                <Flex className="gap-x-4 relative after:absolute after:h-1 after:w-[280px] after:top-1/2 after:-translate-y-1/2 after:right-[-340px] after:rounded-lg after:bg-secondary">
-                    <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
-                        1
-                    </p>
-                    <p className='font-pop font-normal text-small text-primary '>My Cart</p>
-                </Flex>
 
-                <Flex className="gap-x-4">
-                    <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
-                        1
-                    </p>
-                    <p className='font-pop font-normal text-small text-primary '>Checkout</p>
-                </Flex>
+        <div className='hidden xl:block'>
+            <SubHeading text="My Cart" className="text-center"/>
+            <Flex className="justify-center gap-x-96 mb-12 mt-8">
+                    <Flex className="gap-x-4 relative after:absolute after:h-1 after:w-[280px] after:top-1/2 after:-translate-y-1/2 after:right-[-340px] after:rounded-lg after:bg-secondary">
+                        <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
+                            1
+                        </p>
+                        <p className='font-pop font-normal text-small text-primary '>My Cart</p>
+                    </Flex>
 
-        </Flex>
+                    <Flex className="gap-x-4">
+                        <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
+                            1
+                        </p>
+                        <p className='font-pop font-normal text-small text-primary '>Checkout</p>
+                    </Flex>
+
+            </Flex>
+
+        </div>
     </Container>
     </Section>
     
-    <Section>
+    <Section className="px-2 xl:px-0">
       <Container>
-        <Flex className="justify-between">
-            <div className='w-7/12'>
+        <Flex className="justify-center gap-y-10 md:justify-between flex-wrap">
+            <div className='md:w-7/12'>
              <h3 className='font-pop font-medium text-small text-secondary border-b border-secondary border-solid pb-5'>Buyer Info</h3>
               <Flex className="justify-between mt-8">
                 <div className='w-49'>
@@ -97,21 +101,21 @@ let [tottal,setTottal] =useState(0)
               <textarea className='w-full  border border-solid border-[#A7A7A7] px-5 py-4 rounded-lg' ></textarea>
             </div>
 
-            <div className='w-4/12'>
+            <div className='md:w-4/12'>
                      <div className='border border-solid border-secondary rounded-lg p-8'>
                         <h3 className='font-pop font-semibold text-center mb-8  text-2xl text-secondary'>Your Order Summary</h3>
                          <div className='border-b border-gray pb-5 mb-5'>
                           {
                             data.map((item,index)=>{
-                          return<ul key={index} className='flex justify-between  mb-5 '>
-                                  <li className='font-pop font-medium w-2  text-xl text-secondary'>1x</li>
+                          return<ul key={index} className='flex  justify-between  mb-5 '>
+                                  <li className='font-pop font-medium w-2 mr-4 xl:mr-0  text-xl text-secondary'>1x</li>
                                   <li className='font-pop font-medium w-[280px]  text-xl text-left text-secondary '>{item.name}</li>
-                                  <li className='font-pop font-medium w-4 text-xl text-secondary pr-12'>{`$${item.price*item.quantity}`}</li>
+                                  <li className='font-pop font-medium w-4 md:text-xl text-secondary pr-12'>{`$${item.price*item.quantity}`}</li>
                                 </ul> 
 
                             })
                           }
-                          {/* sdfsd */}
+                        
                         
                          </div>
                          <ul className='flex justify-between mb-6  border-gray '>
@@ -142,7 +146,7 @@ let [tottal,setTottal] =useState(0)
                           </Link>
                      </div>
             </div>
-            <div></div>
+           
         </Flex>
       </Container>
     </Section>
