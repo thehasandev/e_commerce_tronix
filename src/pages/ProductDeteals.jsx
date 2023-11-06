@@ -124,7 +124,7 @@ function ProductDeteals() {
                         <AiFillStar size={25}/>
                         <AiFillStar size={25}/>
                       </Flex>
-                      <p className='font-pop font-normal text-gray text-small'>Review (12)   |   Sold 99</p>
+                      <p className='font-pop font-normal text-gray text-sm md:text-small'>Review (12)   |   Sold 99</p>
                      </Flex>
 
                      <Flex className='md:w-4/12 w-full items-center gap-x-4'>
@@ -158,10 +158,10 @@ function ProductDeteals() {
                       </Flex>
                    </div>
 
-                  <h5 className='font-pop font-normal text-small text-secondary mt-8 mb-4'>Description</h5> 
-                  <p className='font-pop font-normal text-small text-gray md:w-[680px]'>Wireless Microphone with the new style, shockproof, clear voice reception that suitable for recording, online meeting, vlogging, and calling. Free casing with high-quality zipper.</p> 
+                  <h5 className='font-pop font-normal text-small text-secondary mt-8 mb-4 hidden md:block'>Description</h5> 
+                  <p className='font-pop font-normal text-small text-gray md:w-[680px] hidden md:block'>Wireless Microphone with the new style, shockproof, clear voice reception that suitable for recording, online meeting, vlogging, and calling. Free casing with high-quality zipper.</p> 
                  
-                  <Flex className="gap-x-16 mt-20">
+                  <Flex className="gap-x-16 mt-8 md:mt-20">
                  
                         {/* <Flex className="gap-x-8 items-center ">
                          <p className='font-pop font-medium text-small text-gray'>Quantity</p>
@@ -175,9 +175,9 @@ function ProductDeteals() {
                     
                       <div>
                         <Link to="/cart">
-                          <button className='md:px-8 px-4 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
+                          <button className='md:px-8 px-4 py-2 md:py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
                         </Link>
-                       <button onClick={()=>{handleSubmit()}} className='md:px-8 px-4 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
+                       <button onClick={()=>{handleSubmit()}} className='md:px-8 px-4 py-2 md:py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
                       </div>
                   </Flex>
                </div>
@@ -187,13 +187,13 @@ function ProductDeteals() {
 
       <Section className="mt-8 px-2 xl:px-0">
         <Container>
-           <Flex className="justify-between">
-             <div className='w-6/12'>
-              <ul className='mb-20 mt-10 flex gap-x-8'>
-                <li onClick={handleReviews} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Reviews (200)</li>
-                <li onClick={handleDisciption} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Description</li>
-                <li onClick={handleDissicun} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Discussion</li>
-                <li onClick={handleGift} className='font-pop inline font-medium text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Gift Cards</li>
+           <Flex className="justify-between gap-y-10 flex-wrap">
+             <div className='md:w-6/12'>
+              <ul className='mb-20 mt-10 flex justify-between md:gap-x-8'>
+                <li onClick={handleReviews} className='font-pop inline font-medium text-sm md:text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Reviews (200)</li>
+                <li onClick={handleDisciption} className='font-pop inline font-medium text-sm md:text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Description</li>
+                <li onClick={handleDissicun} className='font-pop inline font-medium text-sm md:text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Discussion</li>
+                <li onClick={handleGift} className='font-pop inline font-medium text-sm md:text-2xl text-secondary hover:text-primary relative after:absolute after:-bottom-2 after:rounded-lg after:left-0 after:w-full after:h-0 after:hover:h-1 after:duration-200 duration-200 cursor-pointer after:bg-primary after:contents-[""]'>Gift Cards</li>
               </ul>
             
             {
@@ -236,9 +236,9 @@ function ProductDeteals() {
               
 
              </div>
-             <div className='w-5/12'>
+             <div className='md:w-5/12'>
               <h3 className='font-pop font-bold text-lg text-secondary '>Add Your Review</h3>
-              <p  className='font-pop font-normal text-small text-gray w-[480px] mt-4 mb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.  </p>
+              <p  className='font-pop font-normal text-small text-gray md:w-[480px] mt-4 mb-10'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.  </p>
                <Input name="Name *" text="text"/>
                <Input name="Eamil *" text="text" className="my-8"/>
               
