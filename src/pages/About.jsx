@@ -21,7 +21,7 @@ function About() {
    
   return (
     <>
-     <Section className="pt-44">
+     <Section className="pt-32 xl:pt-44 px-2 xl:px-0">
        <Container>
         <Flex className="items-center">
         <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{data}</p>
