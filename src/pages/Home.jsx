@@ -236,11 +236,11 @@ function Home() {
                   <Image src={S6}/>
                 </div>
             </Flex>
-            <Image src={Add} className="mt-40"/>
+            <Image src={Add} className="mt-16 xl:mt-40"/>
         </Container>
     </Section>   
 
-   <Section className="my-40">
+   <Section className="my-16 xl:my-40">
      <Container>
             
          <Flex >
