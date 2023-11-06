@@ -72,7 +72,7 @@ function Navbar() {
                       <AiFillLinkedin size={25}/>
                   </Flex>
                   <div className='hidden sm:block lg:w-6/12'>
-                    <Flex className='  justify-end gap-x-4 lg:gap-x-8 '>
+                    <Flex className='justify-end gap-x-4 lg:gap-x-8 '>
                         <Contact icon={<BsFillTelephoneFill size={20}/>} text="+12 345 6789 0"/>
                         <Contact icon={<MdEmail size={25}/>} text="support@tronix.com"/>
                         <Contact icon={<AiOutlineUser size={25}/>} text="Account"/>
@@ -82,7 +82,7 @@ function Navbar() {
                   </div>
               </Flex>
 
-              <nav ref={dropRef} className='flex items-center justify-between gap-x-4 py-4 md:py-8'>
+              <nav ref={dropRef} className='flex items-center justify-between gap-x-4 py-2 xl:py-8'>
                   <div className='md:w-3/12'>
                     <Image src={Logo} alt="Logo"/>
                   </div>
@@ -124,8 +124,8 @@ function Navbar() {
                     </ul>
                   </div>
 
-                  <div className='md:w-3/12 relative'>
-                      <input type="text" className='bg-[#D0D0D2]  w-full md:px-8 py-2 rounded-[8px]'/>
+                  <div className='md:w-3/12 w-full relative'>
+                      <input type="text" className='bg-white border border-primary border-solid  w-full md:px-8 px-2 py-1 xl:py-2 rounded-[5px]'/>
                       <div className='w-10 h-full bg-primary absolute top-0 right-0 rounded-r-[8px] text-white flex items-center justify-center'>
                         <AiOutlineSearch size={25}/>
                       </div>
