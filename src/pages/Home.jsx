@@ -78,23 +78,23 @@ function Home() {
 
   return (
     <>
-    <Section className="pt-44">
+    <Section className="md:pt-44 pt-32">
         <Container>
-            <Flex className="justify-between">
-                <div className='w-2/3'>
-                <Slider {...bannerSlide}>
-                <Image src={Banner3}/>
-                <Image src={Banner2}/>
-                <Image src={Banner4}/>
-                <Image src={Banner5}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-
-                </Slider>
+            <Flex className="lg:justify-between justify-center gap-x-2 2xl:gap-x-0">
+                <div className='md:w-2/3 w-full'>
+                 <Slider {...bannerSlide}>
+                    <Image src={Banner3}/>
+                    <Image src={Banner2}/>
+                    <Image src={Banner4}/>
+                    <Image src={Banner5}/>
+                    <Image src={BannerSlide}/>
+                    <Image src={BannerSlide}/>
+                 </Slider>
                 </div>
-                <div className='1/3'>
-                <Image src={BannerOne} className="mb-8"/>
-                <Image src={BannerTwo}/>
+
+                <div className='md:1/3 hidden lg:block'>
+                    <Image src={BannerOne} className="mb-8"/>
+                    <Image src={BannerTwo}/>
                 </div>
             </Flex>
         </Container>
