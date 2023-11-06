@@ -65,8 +65,9 @@ function Home() {
       };
 
       const flashSlide = {
+        autoplay: true,
         infinite: true,
-        speed: 500,
+        speed: 1500,
         slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <NextArrow class="absolute top-1/2 -translate-y-1/2 right-0"/>,
@@ -215,13 +216,25 @@ function Home() {
 
     <Section>
         <Container>
-            <Flex className="justify-between">
-                <Image src={S1}/>
-                <Image src={S2}/>
-                <Image src={S3}/>
-                <Image src={S4}/>
-                <Image src={S5}/>
-                <Image src={S6}/>
+            <Flex className="lg:justify-between gap-5 lg:gap-0 justify-center flex-wrap">
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S1}/>
+                </div>
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S2}/>
+                </div>
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S3}/>
+                </div>
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S4}/>
+                </div>
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S5}/>
+                </div>
+                <div className='w-32 lg:w-2/12'>
+                  <Image src={S6}/>
+                </div>
             </Flex>
             <Image src={Add} className="mt-40"/>
         </Container>
