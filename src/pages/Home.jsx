@@ -126,11 +126,11 @@ function Home() {
         </Container>
     </Section>
     
-    <Section>
+    <Section className="px-2 xl:px-0">
         <Container>
-        <Flex className="justify-between items-center">
-            <SubHeading text="New Arrival" className="mb-12"/>
-            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
+        <Flex className="justify-between items-center mb-12">
+            <SubHeading text="New Arrival" />
+            <p className='font-pop font-normal text-primary lg:text-2xl cursor-pointer' onClick={()=>{setArrivalView(!arrivalView)}}>View All</p>
         </Flex>
 
         <Flex className="justify-between flex-wrap gap-y-8">

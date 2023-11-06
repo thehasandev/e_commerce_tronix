@@ -5,7 +5,7 @@ import { AiFillStar } from 'react-icons/ai'
 
 function Arrival({src,alt,badge,name,price}) {
   return (
-    <Flex className={`w-w512 border border-gray rounded-xl`}>
+    <Flex className={`md:w-w512 border border-gray rounded-xl`}>
       <div className='w-1/2 relative'>
         
          <Image src={src} alt={alt} className="rounded-s-lg w-full" />
