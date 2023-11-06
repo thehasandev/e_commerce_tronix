@@ -40,30 +40,33 @@ let handleSubmit =(data)=>{
 
   return (
     <>
-       <Section className="mb-8 pt-44">
+       <Section className="mb-8 pt-32 xl:pt-44">
             <Container>
-                <Flex className="items-center">
+                <Flex className="items-center pb-5 px-2 xl:px-0">
                     <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{datas}</p>
                     <AiOutlineRight className='text-gray'/>
                     <p className='capitalize font-pop font-normal text-small text-primary ml-2'>{(window.location.pathname.replace("/",""))}</p>
                 </Flex>
+                <div className='hidden md:block'>
                 <SubHeading text="My Cart" className="text-center"/>
-                <Flex className="justify-center gap-x-96 mb-12 mt-8">
-                        <Flex className="gap-x-4 relative after:absolute after:h-1 after:w-[280px] after:top-1/2 after:-translate-y-1/2 after:right-[-340px] after:rounded-lg after:bg-secondary">
-                            <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
-                                1
-                            </p>
-                            <p className='font-pop font-normal text-small text-primary '>My Cart</p>
-                        </Flex>
+                    <Flex className="justify-center md:gap-x-96 mb-12 mt-8">
+                            <Flex className="gap-x-4 relative after:absolute after:h-1 after:w-[280px] after:top-1/2 after:-translate-y-1/2 after:right-[-340px] after:rounded-lg after:bg-secondary">
+                                <p className='w-8 h-8 border border-solid border-primary rounded-full text-small font-pop font-normal text-primary flex items-center justify-center'>
+                                    1
+                                </p>
+                                <p className='font-pop font-normal text-small text-primary '>My Cart</p>
+                            </Flex>
 
-                        <Flex className="gap-x-4">
-                            <p className='w-8 h-8 border border-solid border-gray rounded-full text-small font-pop font-normal text-gray flex items-center justify-center'>
-                                1
-                            </p>
-                            <p className='font-pop font-normal text-small text-gray '>Checkout</p>
-                        </Flex>
+                            <Flex className="gap-x-4">
+                                <p className='w-8 h-8 border border-solid border-gray rounded-full text-small font-pop font-normal text-gray flex items-center justify-center'>
+                                    1
+                                </p>
+                                <p className='font-pop font-normal text-small text-gray '>Checkout</p>
+                            </Flex>
 
-                </Flex>
+                    </Flex>
+
+                </div>
             </Container>
         </Section>
 
@@ -83,17 +86,21 @@ let handleSubmit =(data)=>{
                                 </div>
                                     
                                 <div className='w-full'>
-                                    <h3 className='font-dm font-bold text-2xl text-secondary'>USB Speaker Portable</h3>
-                                    <Flex className="flex justify-between items-center mb-4 mt-12">
+                                    <h3 className='font-dm font-bold md:text-2xl text-secondary'>USB Speaker Portable</h3>
+                                    <Flex className="flex justify-between items-center mb-4 mt-4 md:mt-12">
                                     <p className='font-dm font-bold text-2xl text-primary  '>{`$ ${item.price*item.quantity} : 00`} </p>
                                     <AiOutlineClose onClick={()=>{handleRemove(item)}}  className='cursor-pointer' size={25}/>
                                     </Flex>
                                 
-                                <Flex className="gap-x-8 items-center">
-                                        <button onClick={()=>{handleDecrement(item)}} className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
+                                <Flex className="gap-x-4 md:gap-x-8 items-center">
+                                    <div>
+                                      <button onClick={()=>{handleDecrement(item)}} className='md:px-5 px-2  md:py-3 md:rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
+                                    </div>
 
                                         <p className='font-dm font-bold text-2xl text-primary'>{item.quantity}</p>
-                                        <button onClick={()=>{handleIncrement(item)}}  className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>+</button>
+                                        <div>
+                                          <button onClick={()=>{handleIncrement(item)}}  className='md:px-5 px-2  md:py-3 md:rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>+</button>
+                                        </div>
                                 </Flex>
                                 </div>
 
@@ -106,9 +113,9 @@ let handleSubmit =(data)=>{
                 </div>
   
                 <div className='md:w-4/12'>
-                    <div className='border border-primary rounded-lg border-solid px-16 py-8 flex items-center justify-between'>
+                    <div className='border border-primary rounded-lg border-solid px-4 py-2 md:px-16 md:py-8 flex items-center justify-between'>
                         <Image src={Voucer}/>
-                        <p className='font-pop font-medium text-2xl text-secondary'>Have a coupon code?</p>
+                        <p className='font-pop font-medium text-xl mx-2 md:text-2xl text-secondary'>Have a coupon code?</p>
                         <AiOutlineRight/>
                     </div>
                     <div className='border rounded-lg border-primary border-solid px-16 py-8 mt-8 '>
