@@ -2,12 +2,16 @@
    position: relative;
   
 }
+.slick-dots ul li{
+  cursor: pointer;
+  
+}
 .slick-dots ul .slick-active::after {
     content: "";
     position: absolute;
     height: 15px;
     width: 25px;
-    bottom: 25px;
+    bottom: 22px;
     left: 3px;
     background: #F46B5B;
     border-radius: 10px;    
