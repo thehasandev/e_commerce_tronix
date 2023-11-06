@@ -16,20 +16,20 @@ import FooterThree from "../assets/f3.png"
 function Footer() {
   return (
     <>
-       <Section className="bg-primary py-[69px] mt-40">
+       <Section className="bg-primary py-8 xl:py-[69px] mt-16 xl:mt-40">
            <Container>
-              <Flex className="items-center gap-x-8">
-                 <div className='w-1/12'>
+              <Flex className="items-center justify-center gap-x-8 flex-wrap">
+                 <div className='lg:w-1/12'>
                     <Image src={FooterTop}/>
                  </div>
-                 <div className='w-5/12'>
-                    <h2 className='font-mon mb-4 font-bold text-white text-5xl'>Join our newsletter now!</h2>
-                    <p className='font-pop font-normal text-white text-small'>Register now and get our latest updates and promos.</p>
+                 <div className='lg:w-5/12'>
+                    <h2 className='font-mon mb-4 font-bold text-white text-2xl xl:text-5xl text-center xl:text-left'>Join our newsletter now!</h2>
+                    <p className='font-pop font-normal text-white text-small text-center xl:text-left mb-5'>Register now and get our latest updates and promos.</p>
                  </div>
                  
-                 <div className='w-4/12 relative'>
-                      <input type="text" className='bg-white w-full px-8 py-8 rounded-[8px]'/>
-                      <button className='px-8  py-4 bg-secondary  absolute top-1/2 -translate-y-1/2 right-6 rounded-[8px] text-white  '>
+                 <div className='lg:w-4/12 relative'>
+                      <input type="text" className='bg-white w-full px-8 py-4  xl:py-8 rounded-[8px]'/>
+                      <button className='px-8 py-2  xl:py-4 bg-secondary  absolute top-1/2 -translate-y-1/2 right-6 rounded-[8px] text-white  '>
                         Join
                       </button>
                   </div>
