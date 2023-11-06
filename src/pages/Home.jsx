@@ -70,7 +70,33 @@ function Home() {
         slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <NextArrow class="absolute top-1/2 -translate-y-1/2 right-0"/>,
-        prevArrow: <PreviousArrow class="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden"/>
+        prevArrow: <PreviousArrow class="absolute top-1/2 -translate-y-1/2 left-0 z-10 hidden"/>,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                infinite: true,
+                
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                initialSlide: 1
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       }; 
 
       const handleSubmit =(data)=>{
@@ -161,11 +187,10 @@ function Home() {
 
     <Section className="my-16 xl:my-40">
         <Container>
-        <Flex className="justify-between items-center">
-                <SubHeading text="Flash Sale" className="mb-12"/>
-                <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
+        <Flex className="justify-between items-center mb-12 px-2 xl:px-0">
+                <SubHeading text="Flash Sale" />
+                <p className='font-pop font-normal text-primary lg:text-2xl cursor-pointer' onClick={()=>{setFlashView(!flashView)}}>View All</p>
         </Flex>
-        
         
         <Slider {...flashSlide}>
             {
@@ -173,7 +198,10 @@ function Home() {
             let {url,name,price,discount,avilabelVale,soldValue,badge} = item
              return<Link onClick={()=>{handleSubmit("Flash Sale")}} key={index} to={name} state={{url,name,price,discount}} >
                 <div key={index}>
-                        <Flashsale key={index} src={url} name={name} price={price} badge={badge} discount={discount} avilabelValue={avilabelVale} soldValue={soldValue}/>
+                    <div className='sm:mr-4'>
+                      <Flashsale key={index} src={url} name={name} price={price} badge={badge} discount={discount} avilabelValue={avilabelVale} soldValue={soldValue}/>
+
+                    </div>
                 </div>
              </Link>
 
