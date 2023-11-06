@@ -21,6 +21,8 @@ import Product from "../components/Product"
 import BannerSlide from "../assets/bannerSlide.png"
 import Banner2 from "../assets/banner2.png"
 import Banner3 from "../assets/banner3.png"
+import Banner4 from "../assets/banner4.png"
+import Banner5 from "../assets/banner5.png"
 import BannerOne from "../assets/bannerOne.png"
 import BannerTwo from "../assets/bannerTwo.png"
 import S1 from "../assets/s1.png"
@@ -83,11 +85,11 @@ function Home() {
                 <Slider {...bannerSlide}>
                 <Image src={Banner3}/>
                 <Image src={Banner2}/>
+                <Image src={Banner4}/>
+                <Image src={Banner5}/>
                 <Image src={BannerSlide}/>
                 <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
-                <Image src={BannerSlide}/>
+
                 </Slider>
                 </div>
                 <div className='1/3'>
