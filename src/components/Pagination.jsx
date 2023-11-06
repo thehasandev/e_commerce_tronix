@@ -738,31 +738,20 @@ function Items({ currentItems }) {
 }
 
 function Pagination({ itemsPerPage }) {
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
-
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+
   const currentItems = items.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(items.length / itemsPerPage);
-
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
   return (
     <>
       <Items currentItems={currentItems} />
-      <Flex className="items-end justify-between">
+      <Flex className="items-end flex-wrap gap-y-5 justify-between">
       <ReactPaginate
         breakLabel="..."
         nextLabel=""
@@ -770,8 +759,8 @@ function Pagination({ itemsPerPage }) {
         pageRangeDisplayed={4}
         pageCount={pageCount}
         previousLabel=""
-        className='flex gap-x-8 mt-16 cursor-pointer'
-        pageClassName="bg-secondary px-4 py-2 text-white text-lg rounded-[2px]"
+        className='flex gap-x-0.5  md:gap-x-8 mt-16 cursor-pointer'
+        pageClassName="bg-secondary px-2 md:px-4 py-1 md:py-2 text-white text-lg rounded-[2px]"
         renderOnZeroPageCount={null}
       />
      
