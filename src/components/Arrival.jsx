@@ -9,7 +9,7 @@ function Arrival({src,alt,badge,name,price}) {
       <div className='w-1/2 relative'>
         
          <Image src={src} alt={alt} className="rounded-s-lg w-full" />
-         <div className='bg-black/30 w-full h-full absolute top-0 left-0'></div>
+         <div className='bg-black/30 w-full h-full absolute top-0 left-0 rounded-l-xl'></div>
             <Flex className='mt-6 ml-6 h-16 w-16 bg-[#2D9CDB] rounded-full absolute top-0 left-0 justify-center items-center'>
                 <p className='font-pop font-normal uppercase text-white'>{badge}</p>
             </Flex>
