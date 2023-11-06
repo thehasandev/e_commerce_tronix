@@ -137,7 +137,7 @@ function Navbar() {
                         <CgMenuRightAlt onClick={()=>{setDrop(!drop)}} size={20} className='text-secondary md:hidden block cursor-pointer'/>
                   
                   
-                  <p className='absolute font-pop md:text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
+                  <p className='absolute font-pop md:text-xl font-medium text-[orange] top-[-10px] left-[20px] xl:top-[-16px] xl:left-[56%]'>{cartdata.length}</p>
                   </Flex>
                        {/* Drop Down Menu  */}
                        {
