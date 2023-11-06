@@ -16,16 +16,30 @@ import { useDispatch, useSelector } from 'react-redux'
 import { move } from '../slices/bradcumb'
 import SubHeading from "../components/SubHeading"
 import { increment,decrement,removeCart } from '../slices/cartSlice'
+import { useRef } from 'react'
 
 function Navbar() {
   let [drop,setDrop] = useState (false)
   let [tottalPrice,setTottalPrice] =useState(0)
   let dispatch = useDispatch()
+  let dropRef =useRef(null)
 
   let handleSubmit =(data)=>{
     dispatch(move(data))
-    setDrop(false)
+    // setDrop(false)
   }
+  useEffect(()=>{
+    let handler =(e)=>{
+     if(!dropRef.current.contains(e.target)){
+       setDrop(false)
+     } 
+    }
+    document.addEventListener("mousedown",handler)
+    return ()=>{
+      document.removeEventListener("mousedown",handler)
+    }
+  })
+
   let [open,setOpen] =useState(false)
   let cartdata =useSelector((state)=>state.cart.cartItem)
 
@@ -68,7 +82,7 @@ function Navbar() {
                   </div>
               </Flex>
 
-              <nav className='flex items-center justify-between gap-x-4 py-4 md:py-8'>
+              <nav ref={dropRef} className='flex items-center justify-between gap-x-4 py-4 md:py-8'>
                   <div className='md:w-3/12'>
                     <Image src={Logo} alt="Logo"/>
                   </div>
@@ -118,9 +132,9 @@ function Navbar() {
                   </div>
 
                   <Flex className='md:w-1/12 gap-x-2 md:gap-x-8  justify-end relative'>
-                        <BiSolidCart size={25} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
-                        <MdEmail size={25} className='text-secondary'/>
-                        <CgMenuRightAlt onClick={()=>{setDrop(!drop)}} size={25} className='text-secondary md:hidden block cursor-pointer'/>
+                        <BiSolidCart size={20} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
+                        <MdEmail size={20} className='text-secondary'/>
+                        <CgMenuRightAlt onClick={()=>{setDrop(!drop)}} size={20} className='text-secondary md:hidden block cursor-pointer'/>
                   
                   
                   <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
@@ -128,7 +142,7 @@ function Navbar() {
                        {/* Drop Down Menu  */}
                        {
                         drop &&
-                        <ul className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
+                        <ul  className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
                             <Link to="/">
                               <div onClick={()=>{handleSubmit("Home")}}>
                                 <List   text="Home" className="pb-2 border-b border-solid border-black/20"/>
