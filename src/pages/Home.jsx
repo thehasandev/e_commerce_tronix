@@ -101,13 +101,24 @@ function Home() {
         </Container>
     </Section>
 
-    <Section className="my-16 xl:my-40">
+    <Section className="my-16 xl:my-40 px-2 xl:px-0">
         <Container>
             <SubHeading text="Category" className="mb-12"/>
-            <Flex className="justify-between">
+            <Flex className="justify-between flex-wrap gap-y-5">
             {
                 cetagorData.map((item,index)=>(
-                    <Categori key={index} src={item.url} text={item.name}/>
+                 <>
+                    <div className='hidden md:block'>
+                        <Categori key={index} src={item.url} text={item.name}/>
+                    </div>
+                   {
+                    index < 4 &&
+                    <div className='block md:hidden'>
+                     
+                        <Categori key={index} src={item.url} text={item.name}/>
+                    </div>
+                   }
+                 </>
                 ))
             }
             </Flex>
