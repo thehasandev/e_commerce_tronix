@@ -81,10 +81,10 @@ function ProductDeteals() {
 
   return (
     <>
-      <Section className="pt-44">
+      <Section className="pt-44 px-2 xl:px-0">
         <Container>
-            <Flex className="justify-between">
-               <div className='w-5/12 '>
+            <Flex className="justify-between flex-wrap">
+               <div className='md:w-5/12 '>
                   <Image  className="w-96 mx-auto" src={url}/> 
                
                   <div className='w-[230px] mx-auto mt-8'>
@@ -102,18 +102,20 @@ function ProductDeteals() {
                
                </div>
 
-               <div className='w-6/12'>
+               <div className='md:w-6/12'>
                   <Section className="mb-5">
                     <Container>
-                        <Flex className="items-center">
+                        <Flex className="items-center mt-5 md:mt-0">
                             <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{pageData}</p>
                             <AiOutlineRight className='text-gray'/>
                             <p className='capitalize font-pop font-normal text-small text-primary ml-2'>{name}</p>
                         </Flex>
                     </Container>
                   </Section>
-                   <Flex>
-                     <Flex className='w-8/12 items-center gap-x-4'>
+
+
+                   <Flex className="flex-wrap">
+                     <Flex className='md:w-8/12 w-full items-center gap-x-2 md:gap-x-4'>
                       <p className='font-pop font-normal text-secondary text-small'>5.5</p>
                       <Flex className="text-[#FFD687] gap-x-1 items-center">
                         <AiFillStar size={25}/>
@@ -125,37 +127,39 @@ function ProductDeteals() {
                       <p className='font-pop font-normal text-gray text-small'>Review (12)   |   Sold 99</p>
                      </Flex>
 
-                     <Flex className='w-4/12 items-center gap-x-4'>
-                       <AiFillHeart size={30} className='text-primary'/>
-                       <p className='font-pop font-normal text-secondary text-small'>Add to Wishlist</p>
+                     <Flex className='md:w-4/12 w-full items-center gap-x-4'>
+                       <AiFillHeart size={30} className='text-primary hidden md:block'/>
+                       <p className='font-pop font-normal text-secondary text-small hidden md:block'>Add to Wishlist</p>
                      </Flex>
                    </Flex>
 
-                   <h3 className='font-pop font-normal text-secondary text-4xl mt-2 mb-4'>{`${name}`}</h3>
+                   <h3 className='font-pop font-normal text-secondary text-xl md:text-4xl mt-5 md:mt-2 mb-4'>{`${name}`}</h3>
                    
-                   <Flex className="items-center gap-x-8">
-                    <h3 className='font-pop font-bold text-secondary text-4xl'>{`${price}`}</h3>
-                    <p className='font-pop font-normal text-gray text-small line-through'>{`${discount}`}</p>
+                   <Flex className="items-center gap-x-4 md:gap-x-8">
+                    <h3 className='font-pop font-bold text-secondary text-base md:text-4xl'>{`${price}$`}</h3>
+                    <p className='font-pop font-normal text-gray text-small line-through'>{`${discount}$`}</p>
                     <button className='font-pop font-normal hover:bg-primary hover:text-white duration-300 text-primary border border-solid border-primary px-4 py-2 rounded-lg'>Save 50%</button>
                    </Flex>
-
-                   <Flex className="mt-12 mb-8 gap-x-8 border-gray border-b pb-10">
-                      <Flex className="gap-x-4 items-center ">
-                         <Image src={Delivary}/>
-                         <p className='font-pop font-normal text-secondary text-small'>Free Delivery</p>
+                   
+                   <div className='hidden xl:block'>
+                      <Flex className="mt-12 flex-wrap mb-8 gap-x-8 border-gray border-b pb-10">
+                          <Flex className="gap-x-4 items-center ">
+                            <Image src={Delivary}/>
+                            <p className='font-pop font-normal text-secondary text-small'>Free Delivery</p>
+                          </Flex>
+                          <Flex className="gap-x-4 items-center ">
+                            <Image src={Voucher}/>
+                            <p className='font-pop font-normal text-secondary text-small'>Available Voucher</p>
+                          </Flex>
+                          <Flex className="gap-x-4 items-center ">
+                            <Image src={Stock}/>
+                            <p className='font-pop font-normal text-secondary text-small'>In Stock</p>
+                          </Flex>
                       </Flex>
-                      <Flex className="gap-x-4 items-center ">
-                         <Image src={Voucher}/>
-                         <p className='font-pop font-normal text-secondary text-small'>Available Voucher</p>
-                      </Flex>
-                      <Flex className="gap-x-4 items-center ">
-                         <Image src={Stock}/>
-                         <p className='font-pop font-normal text-secondary text-small'>In Stock</p>
-                      </Flex>
-                   </Flex>
+                   </div>
 
                   <h5 className='font-pop font-normal text-small text-secondary mt-8 mb-4'>Description</h5> 
-                  <p className='font-pop font-normal text-small text-gray w-[680px]'>Wireless Microphone with the new style, shockproof, clear voice reception that suitable for recording, online meeting, vlogging, and calling. Free casing with high-quality zipper.</p> 
+                  <p className='font-pop font-normal text-small text-gray md:w-[680px]'>Wireless Microphone with the new style, shockproof, clear voice reception that suitable for recording, online meeting, vlogging, and calling. Free casing with high-quality zipper.</p> 
                  
                   <Flex className="gap-x-16 mt-20">
                  
@@ -171,9 +175,9 @@ function ProductDeteals() {
                     
                       <div>
                         <Link to="/cart">
-                          <button className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
+                          <button className='md:px-8 px-4 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Chat</button>
                         </Link>
-                       <button onClick={()=>{handleSubmit()}} className='px-8 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
+                       <button onClick={()=>{handleSubmit()}} className='md:px-8 px-4 py-5 mr-5 rounded-lg bg-primary text-white text-small font-semibold hover:bg-transparent border-solid border-primary  border hover:text-primary duration-300'>Add to Cart</button>
                       </div>
                   </Flex>
                </div>
@@ -181,7 +185,7 @@ function ProductDeteals() {
         </Container>
       </Section>
 
-      <Section className="mt-8">
+      <Section className="mt-8 px-2 xl:px-0">
         <Container>
            <Flex className="justify-between">
              <div className='w-6/12'>
