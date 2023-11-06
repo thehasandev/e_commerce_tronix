@@ -67,47 +67,45 @@ let handleSubmit =(data)=>{
             </Container>
         </Section>
 
-     <Section>
+     <Section className="px-2 xl:px-0">
         <Container>
           
-            <Flex className="mb-20 justify-between">
+            <Flex className="mb-20 md:justify-between justify-center flex-wrap">
                       
-                         <div className='w-7/12'>
-                            {
-                                data.map((item,index)=>(
-                                    <div key={index} className='w-full mb-8'>
-                                            <Flex className='w-full gap-x-14 border-b border-solid border-primary pb-8 items-center'>  
-                                             
-                                            <div className='w-96'>
-                                                <Image src={item.url}/>
-                                            </div>
-                                                
-                                            <div className='w-full'>
-                                                <h3 className='font-dm font-bold text-2xl text-secondary'>USB Speaker Portable</h3>
-                                                <Flex className="flex justify-between items-center mb-4 mt-12">
-                                                <p className='font-dm font-bold text-2xl text-primary  '>{`$ ${item.price*item.quantity} : 00`} </p>
-                                                <AiOutlineClose onClick={()=>{handleRemove(item)}}  className='cursor-pointer' size={25}/>
-                                                </Flex>
-                                            
-                                            <Flex className="gap-x-8 items-center">
-                                                    <button onClick={()=>{handleDecrement(item)}} className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
+                <div className='md:w-7/12'>
+                {
+                    data.map((item,index)=>(
+                        <div key={index} className='w-full mb-8'>
+                                <Flex className='w-full gap-x-14 border-b border-solid border-primary pb-8 items-center'>  
+                                    
+                                <div className='md:w-96'>
+                                    <Image src={item.url}/>
+                                </div>
+                                    
+                                <div className='w-full'>
+                                    <h3 className='font-dm font-bold text-2xl text-secondary'>USB Speaker Portable</h3>
+                                    <Flex className="flex justify-between items-center mb-4 mt-12">
+                                    <p className='font-dm font-bold text-2xl text-primary  '>{`$ ${item.price*item.quantity} : 00`} </p>
+                                    <AiOutlineClose onClick={()=>{handleRemove(item)}}  className='cursor-pointer' size={25}/>
+                                    </Flex>
+                                
+                                <Flex className="gap-x-8 items-center">
+                                        <button onClick={()=>{handleDecrement(item)}} className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>-</button>
 
-                                                    <p className='font-dm font-bold text-2xl text-primary'>{item.quantity}</p>
-                                                    <button onClick={()=>{handleIncrement(item)}}  className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>+</button>
-                                            </Flex>
-                                            </div>
+                                        <p className='font-dm font-bold text-2xl text-primary'>{item.quantity}</p>
+                                        <button onClick={()=>{handleIncrement(item)}}  className='px-5 py-3 rounded-lg bg-gray text-secondary text-3xl font-semibold hover:bg-primary hover:text-white duration-200'>+</button>
+                                </Flex>
+                                </div>
 
-                                            </Flex>
+                                </Flex>
 
-                                    </div>
+                        </div>
 
-                                ))
-                            }                 
-                         </div>
-
-            
-                   
-                <div className='w-4/12'>
+                    ))
+                }                 
+                </div>
+  
+                <div className='md:w-4/12'>
                     <div className='border border-primary rounded-lg border-solid px-16 py-8 flex items-center justify-between'>
                         <Image src={Voucer}/>
                         <p className='font-pop font-medium text-2xl text-secondary'>Have a coupon code?</p>
