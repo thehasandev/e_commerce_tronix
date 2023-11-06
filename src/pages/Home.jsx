@@ -291,11 +291,11 @@ function Home() {
 
    <Section>
     <Container>
-        <Flex className="justify-between items-center">
-            <SubHeading text="Top Rated Product" className="mb-12"/>
-            <p className='font-pop font-normal text-primary text-2xl cursor-pointer' onClick={()=>{setProductView(!productView)}}>View All</p>
+        <Flex className="justify-between  items-center mb-12 px-4 xl:px-0">
+            <SubHeading text="Top Rated Product"/>
+            <p className='font-pop font-normal text-primary xl:text-2xl cursor-pointer' onClick={()=>{setProductView(!productView)}}>View All</p>
         </Flex>
-        <Flex className="flex-wrap gap-6">
+        <Flex className="flex-wrap xl:justify-between justify-center gap-6">
             {
                 productView ? 
                     productData.map((item,index)=>{
