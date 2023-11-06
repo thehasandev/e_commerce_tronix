@@ -62,7 +62,7 @@ function Navbar() {
   },[cartdata])  
   return (
     <>
-        <Section className="mb-8 px-2 xl:x-0 fixed w-full z-10 bg-white">
+        <Section className="mb-8 px-2 xl:x-0 fixed w-full  z-10 bg-white ">
           <Container>
               <Flex className="md:justify-between justify-center gap-4 lg:gap-y-0 flex-wrap py-2 md:py-4">
                   <Flex className='lg:w-2/12 text-gray gap-x-8 '>
@@ -142,10 +142,10 @@ function Navbar() {
                        {/* Drop Down Menu  */}
                        {
                         drop &&
-                        <ul  className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
+                        <ul  className='bg-white absolute top-[90px] text-center right-0 block md:hidden w-full'>
                             <Link to="/">
                               <div onClick={()=>{handleSubmit("Home")}}>
-                                <List   text="Home" className="pb-2 border-b border-solid border-black/20"/>
+                                <List   text="Home" className="pb-2 pt-10 border-b border-solid border-black/20"/>
                               </div>
                             </Link>
 
@@ -169,7 +169,7 @@ function Navbar() {
 
                             <Link to="/contact">
                               <div onClick={()=>{handleSubmit("Contact")}}>
-                                <List  text="Contact"/>
+                                <List className="pb-2" text="Contact"/>
                               </div>
                             </Link>
                         </ul>
