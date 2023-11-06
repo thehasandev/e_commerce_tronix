@@ -137,7 +137,7 @@ function Navbar() {
                         <CgMenuRightAlt onClick={()=>{setDrop(!drop)}} size={20} className='text-secondary md:hidden block cursor-pointer'/>
                   
                   
-                  <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
+                  <p className='absolute font-pop md:text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
                   </Flex>
                        {/* Drop Down Menu  */}
                        {
@@ -176,16 +176,17 @@ function Navbar() {
                        }
                    
                    {/* add to cart sidebar  */}
+
                    {
                     open &&
-                    <div className='w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 right-0 z-10'>
+                    <div className='md:w-2/6 h-screen  bg-[#e3e3e3] duration-500 absolute top-0 right-0 z-10'>
                       <Flex className="justify-end">
                         <AiOutlineClose size={25} className='text-secondary cursor-pointer m-5' onClick={()=>{setOpen(false)}}/>
                       </Flex>
                        
                       <SubHeading text="SHOPPING CART" className=" border-b border-solid px-2 border-primary pb-5"/>
                         
-                        <ul className='flex justify-between mt-5 px-2 '>
+                        <ul className='flex gap-x-1.5 md:gap-x-0 justify-between mt-5 px-2 '>
                            <li className='font-dm font-bold text-base text-secondary'>Action</li>
                            <li className='font-dm font-bold text-base text-secondary'>Product</li>
                            <li className='font-dm font-bold text-base text-secondary'>Name</li>
@@ -198,32 +199,32 @@ function Navbar() {
                          cartdata.length >0 ?
                         <>{
                               cartdata.map((item,index)=>{
-                          return <ul key={index}  className=' flex items-center  mt-5 bg-[#454449] py-2'>   
+                          return <ul key={index}  className=' flex justify-between px-1 lg:px-0 lg:gap-x-0 items-center  mt-5 bg-[#454449] py-2'>   
                                     
-                                    <li className='w-32 pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
+                                    <li className='lg:w-32 lg:pl-5 cursor-pointer' onClick={()=>{handleRemove(item)}}  >
                                       <AiOutlineCloseSquare onClick={()=>{handleRemove(item)}} size={30} className='text-white '/>
                                     </li>
                                     
-                                    <li className='w-16 mr-1 '>
+                                    <li className='w-8 lg:w-16 lg:mr-1 '>
                                       <img src={item.url} alt="" className='w-full'/>
                                     </li>
       
-                                    <li className='w-[180px] px-4  font-dm font-medium text-xs text-center text-white'>
+                                    <li className='lg:w-[180px] lg:px-4  font-dm font-medium text-xs text-center text-white'>
                                     {item.name}
                                     
                                     </li>
       
-                                    <li className='w-[100px]  font-dm font-medium text-base  text-white'>
+                                    <li className='lg:w-[100px]  font-dm font-medium text-base  text-white'>
                                       {item.price}
                                     </li>
       
-                                    <li className='  font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
+                                    <li className='font-dm  font-bold text-base text-white border border-white flex justify-center gap-x-3 px-1 items-center '>
                                       <button onClick={()=>{handleDecrement(item)}}   className='text-xl text-white'>-</button>
                                         {item.quantity}
                                       <button onClick={()=>{handleIncrement(item)}}  className='text-xl text-white'>+</button>
                                     </li>
       
-                                    <li className='w-32  text-right pr-5 font-dm font-medium text-base text-white'>
+                                    <li className='lg:w-32  text-right lg:pr-5 font-dm font-medium text-base text-white'>
                                       {item.price*item.quantity}
                                     </li>
                                 </ul>
@@ -233,7 +234,7 @@ function Navbar() {
                             }
                             <div className='mt-8 flex justify-center gap-x-5'>
                               <Link to="/cart">
-                                <button onClick={()=>{setOpen(false)}} className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-8 py-4 rounded-[5px] text-white hover:text-secondary duration-200'>Veiw Cart</button>
+                                <button onClick={()=>{setOpen(false)}} className='font-pop font-medium text-base bg-secondary border border-solid border-secondary hover:bg-transparent px-4 lg:px-8 py-2 lgpy-4 rounded-[5px] text-white hover:text-secondary duration-200'>Veiw Cart</button>
                               </Link>
                               
 
