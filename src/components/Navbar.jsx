@@ -45,22 +45,24 @@ function Navbar() {
   },[cartdata])  
   return (
     <>
-        <Section className="mb-8">
+        <Section className="mb-8 px-2 xl:x-0">
           <Container>
-              <Flex className="justify-between py-4">
-                  <Flex className='w-2/12 text-gray gap-x-8 '>
+              <Flex className="md:justify-between justify-center gap-4 lg:gap-y-0 flex-wrap py-4">
+                  <Flex className='lg:w-2/12 text-gray gap-x-8 '>
                       <BsInstagram size={25}/>
                       <AiFillFacebook size={25}/>
                       <AiOutlineTwitter size={25}/>
                       <AiFillLinkedin size={25}/>
                   </Flex>
+                  <div className='hidden sm:block lg:w-6/12'>
+                    <Flex className='  justify-end gap-x-4 lg:gap-x-8 '>
+                        <Contact icon={<BsFillTelephoneFill size={20}/>} text="+12 345 6789 0"/>
+                        <Contact icon={<MdEmail size={25}/>} text="support@tronix.com"/>
+                        <Contact icon={<AiOutlineUser size={25}/>} text="Account"/>
+                      
+                    </Flex>
 
-                  <Flex className='w-6/12 justify-end gap-x-8'>
-                      <Contact icon={<BsFillTelephoneFill size={20}/>} text="+12 345 6789 0"/>
-                      <Contact icon={<MdEmail size={25}/>} text="support@tronix.com"/>
-                      <Contact icon={<AiOutlineUser size={25}/>} text="Account"/>
-                    
-                  </Flex>
+                  </div>
               </Flex>
 
               <nav className='flex items-center justify-between py-8'>

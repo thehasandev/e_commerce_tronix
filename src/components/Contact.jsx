@@ -4,7 +4,7 @@ import Flex from './Flex'
 
 function Contact({text,icon}) {
   return (
-    <Flex className="gap-x-4 items-center">
+    <Flex className="md:gap-x-4 items-center">
         <div className='text-primary'> 
            {icon}
         </div>
