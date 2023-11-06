@@ -26,7 +26,7 @@ function Navbar() {
 
   let handleSubmit =(data)=>{
     dispatch(move(data))
-    // setDrop(false)
+    setDrop(false)
   }
   useEffect(()=>{
     let handler =(e)=>{
