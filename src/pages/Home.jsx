@@ -46,8 +46,9 @@ function Home() {
     let dispatch =useDispatch()
     const bannerSlide = {
         dots: true,
+        autoplay: true,
         infinite: true,
-        speed: 1000,
+        speed: 1500,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows:false,
@@ -100,7 +101,7 @@ function Home() {
         </Container>
     </Section>
 
-    <Section className="my-40">
+    <Section className="my-16 xl:my-40">
         <Container>
             <SubHeading text="Category" className="mb-12"/>
             <Flex className="justify-between">
@@ -147,7 +148,7 @@ function Home() {
         </Container>
     </Section>
 
-    <Section className="my-40">
+    <Section className="my-16 xl:my-40">
         <Container>
         <Flex className="justify-between items-center">
                 <SubHeading text="Flash Sale" className="mb-12"/>
