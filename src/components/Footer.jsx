@@ -76,7 +76,7 @@ function Footer() {
 
                          <div className='md:w-1/3'>
                             <h3 className="font-mon font-bold xl:text-2xl text-secondary mb-8">Follow Us</h3>
-                              <Flex className="md:gap-x-8 flex-col gap-y-2 xl:flex-row">
+                              <Flex className="md:gap-x-8 flex-col gap-y-2 md:flex-row">
                                   <div className='bg-primary w-14 h-14 text-white relative rounded-[8px]'>
                                     <BsInstagram size={30} className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30'/>
                                   </div>
@@ -99,15 +99,18 @@ function Footer() {
 
        <div>
          <Container>
-          <Flex className="justify-between pt-6">
+          <Flex className="justify-between pt-6 ">
             <div>
-              <p className='font-pop font-normal text-small text-secondary'>Copyright © 2021 Tronix. All Right Reseved</p>
+              <p className='font-pop font-normal text-small px-2 md:px-0 text-secondary'>Copyright © 2021 Tronix. All Right Reseved</p>
             </div>
-            
-            <div className='flex gap-x-8'>
-              <Image src={FooterOne}/>
-              <Image src={FooterTwo}/>
-              <Image src={FooterThree}/>
+
+            <div className='hidden md:block'>
+              <div className='flex  gap-x-4 md:gap-x-8'>
+                <Image src={FooterOne}/>
+                <Image src={FooterTwo}/>
+                <Image src={FooterThree}/>
+              </div>
+
             </div>
 
           </Flex>
