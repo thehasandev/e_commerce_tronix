@@ -115,7 +115,7 @@ function Navbar() {
                   <Flex className='w-1/12 gap-x-8  justify-end relative'>
                         <BiSolidCart size={25} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
                         <MdEmail size={25} className='text-secondary'/>
-                  <p className='absolute font-pop text-xl font-medium text-primary  -top-3 left-1/2 translate-x-1/2'>{cartdata.length}</p>
+                  <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-1/2 translate-x-1/2'>{cartdata.length}</p>
                   </Flex>
                    
                    {/* add to cart sidebar  */}
