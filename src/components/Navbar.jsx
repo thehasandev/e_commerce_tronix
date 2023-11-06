@@ -4,6 +4,7 @@ import Flex from './Flex'
 import {BsInstagram,BsFillTelephoneFill} from "react-icons/bs"
 import {BiSolidCart} from "react-icons/bi"
 import {MdEmail} from "react-icons/md"
+import {CgMenuRightAlt} from "react-icons/cg"
 import {AiFillLinkedin,AiOutlineTwitter,AiFillFacebook,AiOutlineUser,AiOutlineSearch,AiOutlineCloseSquare, AiOutlineClose} from "react-icons/ai"
 import Contact from './Contact'
 import Image from './Image'
@@ -17,6 +18,7 @@ import SubHeading from "../components/SubHeading"
 import { increment,decrement,removeCart } from '../slices/cartSlice'
 
 function Navbar() {
+  
   let [tottalPrice,setTottalPrice] =useState(0)
   let dispatch = useDispatch()
 
@@ -45,9 +47,9 @@ function Navbar() {
   },[cartdata])  
   return (
     <>
-        <Section className="mb-8 px-2 xl:x-0">
+        <Section className="mb-8 px-2 xl:x-0 fixed w-full z-10 bg-white">
           <Container>
-              <Flex className="md:justify-between justify-center gap-4 lg:gap-y-0 flex-wrap py-4">
+              <Flex className="md:justify-between justify-center gap-4 lg:gap-y-0 flex-wrap py-2 md:py-4">
                   <Flex className='lg:w-2/12 text-gray gap-x-8 '>
                       <BsInstagram size={25}/>
                       <AiFillFacebook size={25}/>
@@ -65,13 +67,13 @@ function Navbar() {
                   </div>
               </Flex>
 
-              <nav className='flex items-center justify-between py-8'>
-                  <div className='w-3/12'>
+              <nav className='flex items-center justify-between gap-x-4 py-4 md:py-8'>
+                  <div className='md:w-3/12'>
                     <Image src={Logo} alt="Logo"/>
                   </div>
 
-                  <div className='w-5/12'>
-                    <ul className='flex gap-x-12'>
+                  <div className='md:w-5/12 md:block hidden'>
+                    <ul className='flex gap-x-3 lg:gap-x-12'>
 
                       <Link to="/">
                         <div onClick={()=>{handleSubmit("Home")}}>
@@ -107,18 +109,53 @@ function Navbar() {
                     </ul>
                   </div>
 
-                  <div className='w-3/12 relative'>
-                      <input type="text" className='bg-[#D0D0D2]  w-full px-8 py-2 rounded-[8px]'/>
+                  <div className='md:w-3/12 relative'>
+                      <input type="text" className='bg-[#D0D0D2]  w-full md:px-8 py-2 rounded-[8px]'/>
                       <div className='w-10 h-full bg-primary absolute top-0 right-0 rounded-r-[8px] text-white flex items-center justify-center'>
                         <AiOutlineSearch size={25}/>
                       </div>
                   </div>
 
-                  <Flex className='w-1/12 gap-x-8  justify-end relative'>
+                  <Flex className='md:w-1/12 gap-x-2 md:gap-x-8  justify-end relative'>
                         <BiSolidCart size={25} className='text-secondary  cursor-pointer' onClick={()=>{setOpen(true)}}/>
                         <MdEmail size={25} className='text-secondary'/>
-                  <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-1/2 translate-x-1/2'>{cartdata.length}</p>
+                        <CgMenuRightAlt size={25} className='text-secondary md:hidden block cursor-pointer'/>
+                  
+                  
+                  <p className='absolute font-pop text-xl font-medium text-[orange]  -top-3 left-3 md:left-1/2 translate-x-1/2'>{cartdata.length}</p>
                   </Flex>
+                       {/* Drop Down Menu  */}
+                       <ul className='bg-white absolute top-[112px] text-center right-0 block md:hidden w-full'>
+                          <Link to="/">
+                            <div onClick={()=>{handleSubmit("Home")}}>
+                              <List   text="Home" className="pb-2 border-b border-solid border-black/20"/>
+                            </div>
+                          </Link>
+
+                          <Link to="/about">
+                            <div onClick={()=>{handleSubmit("About")}}>
+                              <List  text="About" className="pb-2 border-b border-solid border-black/20"/>
+                            </div>
+                          </Link>
+
+                          <Link to="/product">
+                            <div onClick={()=>{handleSubmit("Product")}}>
+                              <List  text="Product" className="pb-2 border-b border-solid border-black/20"/>
+                            </div>
+                          </Link>
+
+                          <Link to="/blog">
+                            <div onClick={()=>{handleSubmit("Blog")}}>
+                              <List  text="Blog" className="pb-2 border-b border-solid border-black/20"/>
+                            </div>
+                          </Link>
+
+                          <Link to="/contact">
+                            <div onClick={()=>{handleSubmit("Contact")}}>
+                              <List  text="Contact"/>
+                            </div>
+                          </Link>
+                       </ul>
                    
                    {/* add to cart sidebar  */}
                    {

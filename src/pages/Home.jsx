@@ -78,7 +78,7 @@ function Home() {
 
   return (
     <>
-    <Section>
+    <Section className="pt-44">
         <Container>
             <Flex className="justify-between">
                 <div className='w-2/3'>

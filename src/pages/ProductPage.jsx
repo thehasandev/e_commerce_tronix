@@ -12,7 +12,7 @@ function ProductPage() {
     let [input,setInput] = useState("")
   return (
     <>
-      <Section>
+      <Section className="pt-44">
         <Container>
             <Flex className="items-center">
                 <p className='capitalize font-pop font-normal text-small text-gray mr-2'>{data}</p>
