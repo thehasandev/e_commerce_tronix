@@ -245,9 +245,9 @@ function Home() {
             
          <Flex className="flex-col xl xl:flex-row">
             <div className='w-w376 hidden 2xl:block'>
-                <div className='w-full bg-primary text-white pt-12 pb-[360px] px-12 rounded-lg'>
+                <div className='w-full bg-primary text-white pt-12 h-full px-12 rounded-lg'>
                     <h3 className='font-mon font-bold text-4xl'>Best Collection</h3>
-                    <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                    <p className='font-pop font-nomal text-small mt-6 mb-12'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum velit commodi sunt debitis porro nulla voluptas doloribus ducimus qui nesciunt, illum consequatur. Repudiandae quam maiores dicta nisi sint est obcaecati vel deserunt consectetur ratione officiis, magni dolor eveniet libero ducimus? </p>
                     <button className='font-pop font-nomal text-small hover:bg-secondary hover:text-white duration-500 hover:border-secondary px-4 py-2 rounded-lg border border-solid border-white'>Shop Now</button>
                 </div>
             </div>
