@@ -31,19 +31,19 @@ function About() {
        </Container>
      </Section>
      
-     <Section className=" mt-20">
+     <Section className=" mt-20 px-2 xl:px-0">
         <Container>
-            <SubHeading text="About Tronix" className="text-center text-5xl mb-8"/>
-            <p className='font-pop font-normal text-small  text-secondary w-[1056px] mx-auto mb-40'>We are here to provide a place special for electronic devices. Although we only operated for 2 years but we always provide the best service for customers and all the sellers who use our website. With the hope that it can help improve a better life using various electronic goods with the latest technology, we are all ears to any suggestion from our dear customers</p>
+            <SubHeading text="About Tronix" className="text-center xl:text-5xl mb-8"/>
+            <p className='font-pop font-normal text-small  text-secondary xl:w-[1056px] mx-auto mb-8 xl:mb-40'>We are here to provide a place special for electronic devices. Although we only operated for 2 years but we always provide the best service for customers and all the sellers who use our website. With the hope that it can help improve a better life using various electronic goods with the latest technology, we are all ears to any suggestion from our dear customers</p>
             <Image src={AboutImg}/>
            
         </Container>
      </Section>
 
-     <Section className="mt-40">
+     <Section className="mt-16 xl:mt-40">
         <Container>
-            <SubHeading text="Why Choosing Us" className="text-center text-5xl mb-20"/>
-            <Flex className="justify-between flex-wrap">
+            <SubHeading text="Why Choosing Us" className="text-center xl:text-5xl mb-20"/>
+            <Flex className="md:justify-between justify-center flex-wrap">
                 <Choosing src={ChooseOne} name="54 Brands" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
                 <Choosing src={ChooseTwo} name="Fast Delivery" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
                 <Choosing src={ChooseThree} name="COD Service" des="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. "/>
@@ -52,10 +52,10 @@ function About() {
         </Container>
      </Section>
 
-     <Section className="mt-40">
+     <Section className="mt-16 xl:mt-40">
         <Container>
-            <SubHeading text="Our Team" className="text-center text-5xl mb-20"/>
-            <Flex className="justify-between flex-wrap">
+            <SubHeading text="Our Team" className="text-center xl:text-5xl mb-20"/>
+            <Flex className="justify-center md:justify-between flex-wrap">
                <Team src={TeamOne} name="Sam Alabama" title="Team Member"/>
                <Team src={TeamOne} name="Ahmad Pucelle" title="Team Member"/>
                <Team src={TeamOne} name="Jack Lentera" title="Team Member"/>
