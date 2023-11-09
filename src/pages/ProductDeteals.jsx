@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Section from '../components/Section'
 import Container from '../components/Container'
 import Flex from "../components/Flex"
 import Image from "../components/Image"
-import ProductDetail from "../assets/product-deteal.png"
-import ProductDetails from "../assets/product-deteals.png"
 import {AiFillStar,AiFillHeart} from "react-icons/ai"
 import Delivary from "../assets/delivery.png"
 import Voucher from "../assets/voucher.png"
@@ -22,6 +20,12 @@ import NextArrow from '../components/NextArrow'
 import PreviousArrow from '../components/PreviousArrow'
 import {AiOutlineRight} from "react-icons/ai"
 function ProductDeteals() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+    });
+  }, []);
   let location  = useLocation()
   let {url,name,price,discount} = location.state
   let cartData =useSelector((state)=>state.cart.cartItem)
