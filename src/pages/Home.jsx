@@ -5,6 +5,8 @@ import flashData from "../Data/flash"
 import featureData from "../Data/feature"
 import productData from "../Data/Product"
 
+import {AiFillStar,AiFillHeart} from "react-icons/ai"
+
 import Section from '../components/Section'
 import Container from '../components/Container'
 import Flex from '../components/Flex'
@@ -37,6 +39,7 @@ import NextArrow from '../components/NextArrow'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { move } from '../slices/bradcumb'
+import { addtocart } from '../slices/cartSlice'
 
 function Home() {
     let [arrivalView,setArrivalView] = useState(false)
@@ -44,6 +47,7 @@ function Home() {
     let [featureView,setFeatureView] = useState(false)
     let [productView,setProductView] = useState(false)
     let dispatch =useDispatch()
+
     const bannerSlide = {
         dots: true,
         autoplay: true,
@@ -102,6 +106,22 @@ function Home() {
 
       const handleSubmit =(data)=>{
         dispatch(move(data))
+      }
+
+      const handleClick =(id)=>{
+        productData.map((item,index)=>{
+           if(index==id){
+            dispatch(addtocart(
+              {
+                url : item.url,
+                name :item.name,
+                price : item.price,
+                sold : item.sold,
+                quantity:1
+              }
+            ))
+           }
+        })
       }
 
   return (
@@ -298,27 +318,87 @@ function Home() {
         <Flex className="flex-wrap xl:justify-between justify-center gap-6">
             {
                 productView ? 
+
                     productData.map((item,index)=>{
                         let {url,name,price,sold,discount} = item
-                return<Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
-                        <Product key={index} src={item.url} name={item.name} price={item.price} sold={item.sold}/>  
-                      </Link>  
+            
+            return <div className='w-w376 border border-gray p-8 rounded-xl'>
+                 <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                      <Image src={url} />
+                  </Link>
+                        <Flex className=' flex-col items-center justify-center'>
+                        <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                          <h3 className='font-pop font-normal text-2xl text-secondary mt-8 mb-2'>{name}</h3>
+                        </Link>
+                                <h4 className='font-pop font-bold text-2xl text-primary '>${price}.00</h4>
+                                <Flex className="gap-x-6 my-6">
+
+                                  <div className='flex items-center gap-x-2 relative after:absolute after:h-5 after:w-[1px] after:bg-gray after:top-0 after:-right-4 '>
+                                    <AiFillStar className='text-[#FFD687]'/>
+                                    <p className='font-pop font-normal text-small text-gray'>5.0</p>
+                                  </div>
+
+                                  <div>
+                                    <p className='font-pop font-normal text-small text-gray'>Sold {sold}</p>
+                                  </div>
+
+                            </Flex>
+                            <Flex className="items-center gap-x-4">
+                              <button onClick={()=>{handleClick(index)}}  className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
+                              <AiFillHeart size={20} className='text-gray'/>
+                            </Flex>
+                      </Flex>
+                   </div> 
+                   
+                // return<Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                //         <Product  key={index} src={item.url} btn="add to cart" name={item.name} price={item.price} sold={item.sold}/>  
+                //       </Link>  
 
                     }
 
                     )
                 :
+
              
                 productData.map((item,index)=>{
                     let {url,name,price,sold,discount} = item
-                     if(index < 4 ){        
-            return  <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}}>
-                      <Product key={index} src={url} name={name} price={price} sold={sold} />  
-                    </Link>
+                     if(index < 4 ){    
+
+                      return <div className='w-w376 border border-gray p-8 rounded-xl'>
+                            <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                                <Image src={url} />
+                            </Link>
+                            <Flex className=' flex-col items-center justify-center'>
+                             <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                               <h3 className='font-pop font-normal text-2xl text-secondary mt-8 mb-2'>{name}</h3>
+                             </Link>
+                                     <h4 className='font-pop font-bold text-2xl text-primary '>${price}.00</h4>
+                                     <Flex className="gap-x-6 my-6">
+     
+                                       <div className='flex items-center gap-x-2 relative after:absolute after:h-5 after:w-[1px] after:bg-gray after:top-0 after:-right-4 '>
+                                         <AiFillStar className='text-[#FFD687]'/>
+                                         <p className='font-pop font-normal text-small text-gray'>5.0</p>
+                                       </div>
+     
+                                       <div>
+                                         <p className='font-pop font-normal text-small text-gray'>Sold {sold}</p>
+                                       </div>
+     
+                                 </Flex>
+                                 <Flex className="items-center gap-x-4">
+                                   <button onClick={()=>{handleClick(index)}}  className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
+                                   <AiFillHeart size={20} className='text-gray'/>
+                                 </Flex>
+                           </Flex>
+                        </div> 
                      }
 
                 }
                 )
+
+
+
+
 
 
             }
