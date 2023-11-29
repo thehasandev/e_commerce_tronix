@@ -124,6 +124,22 @@ function Home() {
         })
       }
 
+    let   handleFeatureClick  =(id)=>{
+      featureData.map((item,index)=>{
+        if(index==id){
+         dispatch(addtocart(
+           {
+             url : item.url,
+             name :item.name,
+             price : item.price,
+             sold : item.sold,
+             quantity:1
+           }
+         ))
+        }
+     })
+    }
+      
   return (
     <>
     <Section className="md:pt-44 pt-32">
@@ -260,6 +276,18 @@ function Home() {
         </Container>
     </Section>   
 
+
+
+
+
+
+
+
+
+
+
+
+
    <Section className="my-16 xl:my-40">
      <Container>
             
@@ -282,20 +310,85 @@ function Home() {
                 featureView ? 
                 featureData.map((item,index)=>{
                     let {url,name,price,discount,subdiscount,percent,badge} = item
-            return <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
-                      <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
+
+                
+     return <div className='w-w376 border border-gray rounded-[8px] relative'>
+                   <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
+                      <Image src={url}  className="w-full h-[400px]"/>
+                    <div className='h-[400px] w-full bg-black/20 absolute top-0 left-0 rounded-t-[5px]'></div>
+                   </Link>
+            
+                    <div className='w-16 bg-[#2D9CDB] text-center py-2 uppercase rounded-[8px] absolute top-8 right-8'>
+                        <p className='font-pop font-medium text-small  text-white'>{badge}</p>
+                    </div>
+
+                    <div className='w-16 bg-[#BB6BD9] text-center py-2 uppercase rounded-[8px] absolute top-24 right-8'>
+                        <p className='font-pop font-medium text-small  text-white'>- {percent}% off</p>
+                    </div>
+
+                    <div>
+                    <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
+                      <h3 className='font-pop font-normal mt-8 mb-2  text-2xl text-secondary text-center'>{name}</h3>
                     </Link>
+                      <p className='font-pop font-normal text-2xl mb-6 text-primary text-center '> <span className='text-secondary line-through'>${subdiscount}</span> - ${price}</p>
+                     
+                      <Flex className="justify-center mb-10">
+                        <button onClick={()=>{handleFeatureClick(index)}}  className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
+                      </Flex>
+                    </div>
+
+                </div>
+
+      
+
+
+
                 }
                 
+
+
                 
                 )
                 :
                 featureData.map((item,index)=>{
                  let {url,name,price,discount,subdiscount,percent,badge} = item
                    if(index < 3 ){
-            return  <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
-                      <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
+
+                    return <div className='w-w376 border border-gray rounded-[8px] relative'>
+                   <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
+                    <Image src={url}  className="w-full h-[400px]"/>
+                    <div className='h-[400px] w-full bg-black/20 absolute top-0 left-0 rounded-t-[5px]'></div>
+                   </Link>
+            
+                    <div className='w-16 bg-[#2D9CDB] text-center py-2 uppercase rounded-[8px] absolute top-8 right-8'>
+                        <p className='font-pop font-medium text-small  text-white'>{badge}</p>
+                    </div>
+
+                    <div className='w-16 bg-[#BB6BD9] text-center py-2 uppercase rounded-[8px] absolute top-24 right-8'>
+                        <p className='font-pop font-medium text-small  text-white'>- {percent}% off</p>
+                    </div>
+
+                    <div>
+                    <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
+                      <h3 className='font-pop font-normal mt-8 mb-2  text-2xl text-secondary text-center'>{name}</h3>
                     </Link>
+                      <p className='font-pop font-normal text-2xl mb-6 text-primary text-center '> <span className='text-secondary line-through'>${subdiscount}</span> - ${price}</p>
+                     
+                      <Flex className="justify-center mb-10">
+                        <button  onClick={()=>{handleFeatureClick(index)}}   className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>Add to cart</button>
+                      </Flex>
+                    </div>
+
+                </div>
+
+            // return  <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
+            //           <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
+            //         </Link>
+
+
+
+
+
                    }
                 }
                 )
@@ -309,6 +402,22 @@ function Home() {
      </Container>
    </Section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
    <Section>
     <Container>
         <Flex className="justify-between  items-center mb-12 px-4 xl:px-0">
@@ -349,11 +458,6 @@ function Home() {
                             </Flex>
                       </Flex>
                    </div> 
-                   
-                // return<Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
-                //         <Product  key={index} src={item.url} btn="add to cart" name={item.name} price={item.price} sold={item.sold}/>  
-                //       </Link>  
-
                     }
 
                     )
