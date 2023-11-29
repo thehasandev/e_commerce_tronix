@@ -17,8 +17,7 @@ import SubHeading from "../components/SubHeading"
 import Categori from "../components/Categori"
 import Arrival from "../components/Arrival"
 import Flashsale from "../components/Flashsale"
-import Feature from "../components/Feature"
-import Product from "../components/Product"
+
 
 import BannerSlide from "../assets/bannerSlide.png"
 import Banner2 from "../assets/banner2.png"
@@ -276,18 +275,6 @@ function Home() {
         </Container>
     </Section>   
 
-
-
-
-
-
-
-
-
-
-
-
-
    <Section className="my-16 xl:my-40">
      <Container>
             
@@ -312,9 +299,9 @@ function Home() {
                     let {url,name,price,discount,subdiscount,percent,badge} = item
 
                 
-     return <div className='w-w376 border border-gray rounded-[8px] relative'>
+     return <div className='w-w376  border border-gray rounded-[8px] relative'>
                    <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
-                      <Image src={url}  className="w-full h-[400px]"/>
+                      <Image src={url}  className="w-full p-8 h-[400px] "/>
                     <div className='h-[400px] w-full bg-black/20 absolute top-0 left-0 rounded-t-[5px]'></div>
                    </Link>
             
@@ -339,14 +326,7 @@ function Home() {
 
                 </div>
 
-      
-
-
-
                 }
-                
-
-
                 
                 )
                 :
@@ -356,7 +336,7 @@ function Home() {
 
                     return <div className='w-w376 border border-gray rounded-[8px] relative'>
                    <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
-                    <Image src={url}  className="w-full h-[400px]"/>
+                    <Image src={url}  className="w-full p-8 h-[400px]"/>
                     <div className='h-[400px] w-full bg-black/20 absolute top-0 left-0 rounded-t-[5px]'></div>
                    </Link>
             
@@ -381,14 +361,6 @@ function Home() {
 
                 </div>
 
-            // return  <Link onClick={()=>{handleSubmit("Featured")}} key={index} to={name} state={{url,name,price,discount}} >
-            //           <Feature key={index} src={url} name={name} price={price} subdiscount={subdiscount} percent={percent} badge={badge}/>
-            //         </Link>
-
-
-
-
-
                    }
                 }
                 )
@@ -402,22 +374,6 @@ function Home() {
      </Container>
    </Section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
    <Section>
     <Container>
         <Flex className="justify-between  items-center mb-12 px-4 xl:px-0">
@@ -432,10 +388,10 @@ function Home() {
                         let {url,name,price,sold,discount} = item
             
             return <div className='w-w376 border border-gray p-8 rounded-xl'>
-                 <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
-                      <Image src={url} />
-                  </Link>
-                        <Flex className=' flex-col items-center justify-center'>
+                      <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
+                            <Image src={url} />
+                      </Link>
+                      <Flex className=' flex-col items-center justify-center'>
                         <Link onClick={()=>{handleSubmit("Top Product")}} key={index} to={name} state={{url,name,price,sold,discount}} >
                           <h3 className='font-pop font-normal text-2xl text-secondary mt-8 mb-2'>{name}</h3>
                         </Link>

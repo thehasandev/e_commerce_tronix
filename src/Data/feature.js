@@ -30,7 +30,7 @@ let feature =[
        
     },
     {
-        url : "/images/fe4.png",
+        url : "/images/fe12.png",
         name : "TV Microphone",
         price : 19,
         discount : 99,
@@ -40,7 +40,7 @@ let feature =[
        
     },
     {
-        url : "/images/fe5.png",
+        url : "/images/fe11.png",
         name : "Motor Device",
         price : 99,
         discount : 189,
@@ -50,7 +50,7 @@ let feature =[
        
     },
     {
-        url : "/images/fe6.png",
+        url : "/images/fe10.png",
         name : "Camera HD + Card",
         price : 88,
         discount : 98,

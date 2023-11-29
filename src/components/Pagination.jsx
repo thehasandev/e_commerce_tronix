@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
+import {AiFillStar,AiFillHeart} from "react-icons/ai"
 import ReactPaginate from 'react-paginate';
 import Product from './Product';
 import Flex from './Flex';
+import Image  from './Image';
+import { useDispatch } from 'react-redux';
+import { addtocart } from '../slices/cartSlice';
 
 // Example items, to simulate fetching from another resources.
 const items = [
@@ -723,13 +727,49 @@ const items = [
     },
 ];
 
+
 function Items({ currentItems }) {
-  return (
+    let dispatch =useDispatch()
+
+    let handleAddtocart =(item,id)=>{
+     dispatch(addtocart({
+        url : item.url,
+        name :item.name,
+        price : item.price,
+        sold : item.sold,
+        quantity:1
+     }))
+    }
+    return (
     <Flex className="flex-wrap justify-center gap-10">
       {currentItems &&
         currentItems.map((item,index) => (
           <div key={index}>
-              <Product src={item.url} name={item.name} price={item.price} sold={item.sold}/>
+            <div className='w-w376 border border-gray p-8 rounded-xl'>
+                    <Image src={item.url} />
+                    <Flex className=' flex-col items-center justify-center'>
+                            <h3 className='font-pop font-normal text-2xl text-secondary mt-8 mb-2'>{item.name}</h3>
+                            <h4 className='font-pop font-bold text-2xl text-primary '>${item.price}.00</h4>
+                            <Flex className="gap-x-6 my-6">
+
+                            <div className='flex items-center gap-x-2 relative after:absolute after:h-5 after:w-[1px] after:bg-gray after:top-0 after:-right-4 '>
+                                <AiFillStar className='text-[#FFD687]'/>
+                                <p className='font-pop font-normal text-small text-gray'>5.0</p>
+                            </div>
+
+                            <div>
+                                <p className='font-pop font-normal text-small text-gray'>Sold {item.sold}</p>
+                            </div>
+
+                        </Flex>
+                        <Flex className="items-center gap-x-4">
+                        <button onClick={()=>{handleAddtocart(item,index)}} className='bg-primary hover:bg-secondary hover:text-white hover:boder-secondary duration-300 font-pop font-nomal text-small px-7 py-2 text-white rounded-[8px] '>add to cart</button>
+                        <AiFillHeart size={20} className='text-gray'/>
+                        </Flex>
+                    </Flex>
+            </div>
+          
+              
               
           </div>
         ))}
